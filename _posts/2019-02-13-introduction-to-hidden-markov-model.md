@@ -6,6 +6,8 @@ math: true
 
 ---
 
+<img src="../assets/img/Introduction-to-Hidden-Markov-Model-adeveloperdiary.com-7.jpg" alt="img" style="zoom:150%;" />
+
 Hidden Markov Model is an Unsupervised Machine Learning Algorithm which is part of the Graphical Models. However Hidden Markov Model (HMM) often trained using supervised learning method in case training data is available. In this introduction to Hidden Markov Model we will learn about the foundational concept, usability, intuition of the algorithmic part and some basic examples. Only little bit of knowledge on probability will be sufficient for anyone to understand this article fully.
 
 # What kind of problem Hidden Markov Model helps to solve?
