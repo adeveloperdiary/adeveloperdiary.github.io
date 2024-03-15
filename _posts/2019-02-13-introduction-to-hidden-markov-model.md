@@ -46,7 +46,7 @@ $$
 
 Below is the diagram of a simple Markov Model as we have defined in above equation.
 
-<img src="../assets/img/Introduction-to-Hidden-Markov-Model-adeveloperdiary.com-3.webp" style="zoom: 50%;" /> 
+<img src="../assets/img/Introduction-to-Hidden-Markov-Model-adeveloperdiary.com-3.webp" style="zoom: 50%;" alt="Introduction-to-Hidden-Markov-Model-adeveloperdiary.com"/> 
 
 ## Transition Probabilities
 
