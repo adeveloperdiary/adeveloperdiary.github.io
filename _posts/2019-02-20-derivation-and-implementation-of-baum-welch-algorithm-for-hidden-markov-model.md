@@ -586,7 +586,7 @@ Also, here are the list of all the articles in this series:
 
 
 1. [Introduction to Hidden Markov Model](https://adeveloperdiary.github.io/posts/machine%20learning/algorithm/introduction-to-hidden-markov-model/)
-2. [Forward and Backward Algorithm in Hidden Markov Model]()
+2. [Forward and Backward Algorithm in Hidden Markov Model](#)
 3. Derivation and implementation of Baum Welch Algorithm for Hidden Markov Model
 4. [Implement Viterbi Algorithm in Hidden Markov Model using Python and R](https://www.adeveloperdiary.com/data-science/machine-learning/implement-viterbi-algorithm-in-hidden-markov-model-using-python-and-r/)
 
