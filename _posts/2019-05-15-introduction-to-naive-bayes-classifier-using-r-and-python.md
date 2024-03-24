@@ -117,10 +117,11 @@ I will talk about vector quantization in a future video, however let’s look mo
 
 If you plot any feature \(x_1$$the distribution might look `Normal/Gaussian`, hence we can use normal distribution to define our likelihood. For simplicity, assume we have only one feature and if we plot the data for both the classes, it might look like following:
 
-<img src="https://www.adeveloperdiary.com/wp-content/uploads/2019/05/Introduction-to-Naive-Bayes-Classifier-using-R-and-Python-adeveloperdiary.jpg" alt="Introduction to Naive Bayes Classifier using R and Python adeveloperdiary" width="600" height="290" class="aligncenter size-full wp-image-1075" />	
-	
-In the above case, any new point in the left side will have a higher probably for $$p(x_1 \mid y=0) $$ than $$p(x_1 \mid y=1)$$. We can define the probability using the `Univariate Gaussian Distribution`.
 
+![Introduction-to-Naive-Bayes-Classifier-using-R-and-Python-adeveloperdiary](../assets/img/Introduction-to-Naive-Bayes-Classifier-using-R-and-Python-adeveloperdiary.webp)
+
+
+In the above case, any new point in the left side will have a higher probably for $$p(x_1 \mid y=0) $$ than $$p(x_1 \mid y=1)$$. We can define the probability using the `Univariate Gaussian Distribution`.
 $$
 P(x \mid \mu,\sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-(x-\mu)^2 / 2 \sigma^2}
 $$
