@@ -1,7 +1,7 @@
 ---
 title: Introduction to Coordinate Descent using Least Squares Regression
 categories: [Machine Learning, Algorithm]
-tags: [machine_learning]
+tags: [Machine Learning]
 math: true
 
 ---

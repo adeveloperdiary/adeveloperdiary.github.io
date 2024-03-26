@@ -1,7 +1,7 @@
 ---
 title: How to visualize Gradient Descent using Contour plot in Python
 categories: [DataScience, Visualization]
-tags: [machine_learning, visualization]
+tags: [Machine Learning, visualization]
 math: true
 ---
 

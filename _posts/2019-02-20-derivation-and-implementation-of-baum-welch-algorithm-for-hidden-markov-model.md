@@ -1,7 +1,7 @@
 ---
 title: Derivation and implementation of Baum Welch Algorithm for Hidden Markov Model
 categories: [Machine Learning, Algorithm]
-tags: [machine_learning]
+tags: [Machine Learning]
 math: true
 
 ---

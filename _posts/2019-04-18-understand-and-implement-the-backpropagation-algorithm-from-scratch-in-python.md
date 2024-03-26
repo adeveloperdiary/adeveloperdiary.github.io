@@ -1,7 +1,7 @@
 ---
 title: Understand and Implement the Backpropagation Algorithm From Scratch In Python
 categories: [Machine Learning, Algorithm]
-tags: [machine_learning]
+tags: [Machine Learning]
 math: true
 ---
 

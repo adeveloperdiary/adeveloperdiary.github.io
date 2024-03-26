@@ -1,7 +1,7 @@
 ---
 title: Introduction to Naive Bayes Classifier using R and Python
 categories: [Machine Learning, Algorithm]
-tags: [machine_learning]
+tags: [Machine Learning]
 math: true
 ---
 

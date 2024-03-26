@@ -1,7 +1,7 @@
 ---
 title: Introduction to Hidden Markov Model
 categories: [Machine Learning, Algorithm]
-tags: [machine_learning]
+tags: [Machine Learning]
 math: true
 
 ---

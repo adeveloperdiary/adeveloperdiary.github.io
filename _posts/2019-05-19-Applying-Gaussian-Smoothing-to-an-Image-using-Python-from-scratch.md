@@ -1,7 +1,7 @@
 ---
 title: Applying Gaussian Smoothing to an Image using Python from scratch
 categories: [Machine Learning, Computer Vision]
-tags: [computer_vision]
+tags: [Machine Learning]
 math: true
 ---
 
