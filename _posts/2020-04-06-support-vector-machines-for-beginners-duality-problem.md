@@ -36,7 +36,7 @@ However our final goal is to solve Non-Linear SVM where Primal Problem is not he
 
 ## Duality
 
-> *In mathematical optimization theory,* ***duality\*** *means that optimization problems may be viewed from either of two perspectives, the primal problem or the dual problem (**the duality principle**). The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem.
+> *In mathematical optimization theory,* **duality** means that optimization problems may be viewed from either of two perspectives, the primal problem or the dual problem (**the duality principle**). The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem.
 >
 > *Wikipedia*
 
@@ -380,6 +380,8 @@ $$
 \text{s.t Linear Constraint : } y_i ( \beta^Tx_i+b) \geq  1 - \xi_i , \text{where }  \xi_i \geq 0
 \end{align}
 $$
+
+
 The value of **k** could be set to either 1 (**Hinge Loss**) or 2 (**Quadratic Loss**).
 
 ### Hinge Loss
