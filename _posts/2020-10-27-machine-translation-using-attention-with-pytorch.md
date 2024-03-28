@@ -66,7 +66,6 @@ The alignment weights provides the importance of each word in the Source sentenc
 $$
 \begin{align}
 W^t = E_o \cdot a^{t} 
-
 \end{align}
 $$
 This $W^t$ will be used along with the Embedding Matrix as input to the Decoder RNN (GRU). The details above is the general structure of the the Attention concept. We can express all of these in one equation as:
