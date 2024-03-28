@@ -1,6 +1,6 @@
 ---
 title: Understanding and implementing Neural Network with SoftMax in Python from scratch
-categories: [Machine Learning, Algorithm]
+categories: [data-science, deep-learning]
 tags: [Machine Learning]
 math: true
 ---

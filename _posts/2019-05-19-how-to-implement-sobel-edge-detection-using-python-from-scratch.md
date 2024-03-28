@@ -1,6 +1,6 @@
 ---
 title: How to implement Sobel edge detection using Python from scratch
-categories: [Machine Learning, Computer Vision]
+categories: [data-science, computer-vision]
 tags: [computer_vision]
 math: true
 ---

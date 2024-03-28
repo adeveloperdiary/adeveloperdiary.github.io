@@ -1,9 +1,11 @@
 ---
 title: How to visualize Gradient Descent using Contour plot in Python
-categories: [DataScience, Visualization]
+categories: [data-science]
 tags: [Machine Learning, visualization]
 math: true
 ---
+
+<img src="../assets/img/How-to-visualize-Gradient-Descent-using-Contour-plot-in-Python-adeveloperdiary.com-3d-plot-4.webp" alt="How-to-visualize-Gradient-Descent-using-Contour-plot-in-Python-adeveloperdiary.com-3d-plot-4.webp" style="zoom:150%;" />
 
 Linear Regression often is the introductory chapter of Machine Leaning and Gradient Descent probably is the first optimization technique anyone learns. Most of the time, the instructor uses a Contour Plot in order to explain the path of the Gradient Descent optimization algorithm. I used to wonder how to create those Contour plot. Today I will try to show how to visualize Gradient Descent using Contour plot in Python.
 

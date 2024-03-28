@@ -6,6 +6,8 @@ math: true
 
 ---
 
+<img src="../assets/img/Introduction-to-Coordinate-Descent-using-Least-Squares-Regression-adeveloperdiary.com_.webp" alt="Introduction-to-Coordinate-Descent-using-Least-Squares-Regression-adeveloperdiary.com_.webp" style="zoom:150%;" />
+
 Coordinate Descent is another type of optimization algorithm used mainly for `strongly convex` and Lasso Regression function. You are probably aware of Gradient Descent, for solving Least Square Regression. In this Introduction to Coordinate Descent using Least Squares Regression tutorial we will learn more about Coordinate Descent and then use this to solve Least Square Regression. 
 
 # Coordinate Descent

@@ -1,6 +1,6 @@
 ---
 title: Implement Viterbi Algorithm in Hidden Markov Model using Python and R
-categories: [Machine Learning, Algorithm]
+categories: [data-science, machine-learning]
 tags: [Machine Learning]
 math: true
 ---

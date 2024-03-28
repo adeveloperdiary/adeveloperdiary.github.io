@@ -1,6 +1,6 @@
 ---
 title: Introduction to Hidden Markov Model
-categories: [Machine Learning, Algorithm]
+categories: [data-science, machine-learning]
 tags: [Machine Learning]
 math: true
 

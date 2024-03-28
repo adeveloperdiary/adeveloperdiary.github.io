@@ -1,6 +1,6 @@
 ---
 title: Support Vector Machines for Beginners – Training Algorithms (Part 4)
-categories: [Machine Learning, Algorithm]
+categories: [data-science, machine-learning]
 tags: [Machine Learning]
 math: true
 ---
