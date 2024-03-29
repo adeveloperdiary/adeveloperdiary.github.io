@@ -14,6 +14,22 @@ In light of my commitment to focus exclusively on Artificial Intelligence, I hav
 
 While some of my previous posts have garnered significant traction and engagement, I will take this opportunity to reflect on and highlight some of those notable moments.
 
+<div>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350330443439877"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9350330443439877"
+     data-ad-slot="5234352564"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+
 ## Top Posts
 
 Despite being recorded three years after the initial blog publication, I am delighted to share the current top posts. It's truly fascinating to observe that topics such as Hidden Markov Model, Computer Vision, and Spring Boot continue to resonate strongly with the viewers.
