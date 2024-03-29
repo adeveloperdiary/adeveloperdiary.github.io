@@ -1,4 +1,5 @@
 ---
+layout: mypost
 title: Moving From WordPress to GitPages
 categories: [generic]
 tags: [generic]
@@ -132,3 +133,4 @@ Some of the other ones:
 ​			
 
 With that, it's time to conclude and transition to the next phase.
+
