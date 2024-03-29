@@ -1,5 +1,4 @@
 ---
-layout: mypost
 title: Moving From WordPress to GitPages
 categories: [generic]
 tags: [generic]
