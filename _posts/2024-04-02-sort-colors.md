@@ -13,5 +13,3 @@ We will use the integers **0**, **1**, and **2** to represent the color red, whi
 
 - **Input** : `[2,0,2,1,1,0]`
 - **Output** :  `[0,0,1,1,2,2]`
-
-![image-20240402171506232](../../../../../../Users/abhisekjana/Library/Application Support/typora-user-images/image-20240402171506232.png)
