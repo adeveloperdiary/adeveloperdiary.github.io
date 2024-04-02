@@ -581,22 +581,22 @@ Here we will split the data into train and validation, then create the instance 
 
  ```python
  def get_dataloaders(self):        
-         
-         # Split the data in train & val
-         train_ds_size=int(0.9 * len(self.dataset))
-         val_ds_size=len(self.dataset)-train_ds_size        
-         
-         train_datasource, val_datasource= random_split(self.dataset,[train_ds_size,val_ds_size])    
-         
-         # Instanciate TranslateDataset for train and val
-         train_ds=TranslateDataset(train_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
-         val_ds=TranslateDataset(val_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
-         
-         # Instanciate the DataLoaders
-         train_dataloader=DataLoader(train_ds, batch_size=self.config["batch_size"],shuffle=True)
-         val_dataloader=DataLoader(val_ds, batch_size=1,shuffle=False)
-         
-         return train_dataloader,val_dataloader
+        
+    # Split the data in train & val
+    train_ds_size=int(0.9 * len(self.dataset))
+    val_ds_size=len(self.dataset)-train_ds_size        
+    
+    train_datasource, val_datasource= random_split(self.dataset,[train_ds_size,val_ds_size])    
+    
+    # Instanciate TranslateDataset for train and val
+    train_ds=TranslateDataset(train_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
+    val_ds=TranslateDataset(val_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
+    
+    # Instanciate the DataLoaders
+    train_dataloader=DataLoader(train_ds, batch_size=self.config["batch_size"],shuffle=True)
+    val_dataloader=DataLoader(val_ds, batch_size=1,shuffle=False)
+    
+    return train_dataloader,val_dataloader
  ```
 
 ## Config
