@@ -235,14 +235,14 @@ Finally, let's use this in the `__init__()` function.
 
 ```python
 class TranslateDataset(Dataset):
-    def __init__(self, datasource, tokenizer_src, tokenizer_tgt, src_lang, tgt_lang, seq_len) -> None:
+    def __init__(self, dataset, tokenizer_src, tokenizer_tgt, config) -> None:
         super().__init__()
-        self.datasource = datasource
+        self.dataset = dataset
         self.tokenizer_src = tokenizer_src
         self.tokenizer_tgt = tokenizer_tgt
-        self.src_lang = src_lang
-        self.tgt_lang = tgt_lang
-        self.seq_len = seq_len
+        self.lang_src = config['lang_src']
+        self.lang_tgt = config['lang_src']
+        self.seq_len = config['seq_len']
 
         self.sos_token = torch.tensor(
             [tokenizer_src.token_to_id("[SOS]")], dtype=torch.int64)
@@ -253,7 +253,7 @@ class TranslateDataset(Dataset):
 		
         # Explain this later
         self.decoder_default_mask = torch.triu(torch.ones(
-            1, seq_len, seq_len), diagonal=1).type(torch.int) == 0
+            1, self.seq_len, self.seq_len), diagonal=1).type(torch.int) == 0
 ```
 
 ### `__len__()` Function
@@ -325,7 +325,7 @@ print(f"Encoder Input : {encoder_input}")
 Encoder Input : tensor([ 2, 62,  0,  3,  1,  1,  1,  1,  1,  1])
 ```
 
-Very similar way, we will create the decoder input and also the label for calculating loss. The next part is to create both the `src_mask` and `tgt_mask` masks.
+Very similar way, we will create the decoder input and also the target label for calculating loss. The next part is to create both the `src_mask` and `tgt_mask` masks.
 
 Before start to construct them, lets review the equation for `MaskedAttention`. Notice the mask is applied after $$QK^T$$ operation. The output of the matrix is going to be `[batch, seq_len, seq_len]`. So for each sentence we need a 2D mask of shape `[seq_len, seq_len]`.
 $$
@@ -357,21 +357,21 @@ array([[1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
 
 Since each row in our source sentence mask is going to be same, we can just construct one row and let python use broadcast logic. This way we will minimize data transfer between CPU and GPU. 
 
-Our source mask will also be using 3 dimension. The first dimension will be for batch. In order to convert the `encoder_input` to `src_mask`, we will compare it with the `pad_token` & then convert the boolean array to int.
+Our source mask will also be using 4 dimensions `[batch, embedding, seq_len, seq_len]`.  In order to convert the `encoder_input` to `src_mask`, we will compare it with the `pad_token` & then convert the boolean array to int.  We will be adding the `embedding` and `seq_len` dimension using `view(1,1,-1)` function. The `batch` dimension will be added by PyTorch upon invocation. 
 
 ```python
-boolean_arr=encoder_input != pad_token
+boolean_arr=encoder_input != pad_token /
 print(f"Boolean Array : {boolean_arr}")
 int_arr=boolean_arr.int()
 print(f"Int Array : {int_arr}")
 src_mask=int_arr.view(1,1,-1)
-print(f"Add 2 more dimension : {src_mask}")
+print(f"Add 2 more dimensions : {src_mask}")
 ```
 
 ```
 Boolean Array : tensor([ True,  True,  True,  True, False, False, False, False, False, False])
 Int Array : tensor([1, 1, 1, 1, 0, 0, 0, 0, 0, 0], dtype=torch.int32)
-Add 2 more dimension : tensor([[[1, 1, 1, 1, 0, 0, 0, 0, 0, 0]]], dtype=torch.int32)
+Add 2 more dimensions : tensor([[[1, 1, 1, 1, 0, 0, 0, 0, 0, 0]]], dtype=torch.int32)
 ```
 
 #### Target Mask
@@ -472,13 +472,13 @@ tensor([[[1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]]], dtype=torch.int32)
 ```
 
-Now we are ready to put together the `__getitem__()` function.
+Now we are ready to put together the `__getitem__()` function. We will be creating the `target_label` tensor array as well, this will be used to calculate the loss.
 
 ```python
-def __getitem__(self, index) -> Any:
-        input_pair = self.datasource[index]
-        src_text = input_pair['translation'][self.src_lang]
-        tgt_text = input_pair['translation'][self.tgt_lang]
+def __getitem__(self, index):
+        input_pair = self.dataset[index]
+        src_text = input_pair['translation'][self.lang_src]
+        tgt_text = input_pair['translation'][self.lang_tgt]
 
         # Word to int
         enc_input_tokens = self.tokenizer_src.encode(src_text).ids
@@ -493,14 +493,17 @@ def __getitem__(self, index) -> Any:
             [self.pad_token] * enc_num_padding_tokens, dtype=torch.int64)
         dec_padding_tokens = torch.tensor(
             [self.pad_token] * dec_num_padding_tokens, dtype=torch.int64)
-
+		
+        # Both SOS and EOS Tokens are needed
         encoder_input = torch.cat(
             [self.sos_token, enc_input_tokens, self.eos_token, enc_padding_tokens], dim=0)
-
+		
+        # EOS Token is not needed
         decoder_input = torch.cat(
             [self.sos_token, dec_input_tokens, dec_padding_tokens], dim=0)
-
-        label = torch.cat([dec_input_tokens, self.eos_token,
+		
+        # SOS Token is not needed
+        target_label = torch.cat([dec_input_tokens, self.eos_token,
                           dec_padding_tokens], dim=0)
 
         src_mask = (encoder_input != self.pad_token).int().view(1, 1, -1)
@@ -512,17 +515,61 @@ def __getitem__(self, index) -> Any:
             "decoder_input": decoder_input,
             "src_mask": src_mask,
             "tgt_mask": tgt_mask,
-            "label": label,
-            "src_text": src_text,
-            "tgt_text": tgt_text
+            "target_label": target_label            
         }
 ```
 
+## DataPreprocessing
 
+We will now create a helper class so that we can put all the individual functions we have created inside this class. Here is what we have learned so far.
 
+```python
+from torch.utils.data import DataLoader, random_split
+from datasets import load_dataset
+from tokenizers import Tokenizer
+from tokenizers.models import WordLevel
+from tokenizers.trainers import WordLevelTrainer
+from tokenizers.pre_tokenizers import Whitespace
+from pathlib import Path
 
+class DataProcessing:
+    def __init__(self, config:dict)-> None:
+        self.config=config
+        
+        self.dataset=load_dataset('opus_books',f'{config["lang_src"]}-{config["lang_tgt"]}',split='train')
+        
+        self.tokenizer_src=self.init_tokenizer(config["lang_src"])
+        self.tokenizer_tgt=self.init_tokenizer(config["lang_tgt"])
+        
+    
+    def traverse_sentences(self, lang):
+        for row in self.dataset:
+            yield row['translation'][lang]  
+            
+    def init_tokenizer(self, lang):
+        tokenizer_path = Path(f"tokenizer_{lang}.json")
+        tokenizer_loaded = False
 
+        if tokenizer_path.exists():
+            # try loading tokenizer if exists
+            try:
+                tokenizer = Tokenizer.from_file(str(tokenizer_path))
+                tokenizer_loaded = True
+            except:
+                pass
+        if not tokenizer_loaded:
+            # initiate tokenizer
+            tokenizer = Tokenizer(WordLevel(unk_token='[UNK]'))
+            tokenizer.pre_tokenizer = Whitespace()
+            trainer = WordLevelTrainer(
+                special_tokens=["[UNK]", "[PAD]", "[SOS]", "[EOS]"], min_frequency=2)
+            tokenizer.train_from_iterator(
+                self.traverse_sentences(lang), trainer=trainer)
+            tokenizer.save(str(tokenizer_path))
+        return tokenizer
+```
 
+Add new function named `get_dataloaders()`. Here is a quick introduction on PyTorch's DataLoader.
 
 ### DataLoader
 
@@ -530,7 +577,68 @@ def __getitem__(self, index) -> Any:
 - You can specify various parameters when creating a `DataLoader`, such as batch size, whether to shuffle the data, the number of workers for data loading, and more. These parameters allow you to customize the data loading process according to your needs.
 - By iterating over a `DataLoader`, you can easily access batches of data, which can then be fed into your model for training or evaluation.
 
- 
+Here we will split the data into train and validation, then create the instance of the `TranslateDataset` and pass it to the `DataLoader` class.
 
+ ```python
+ def get_dataloaders(self):        
+         
+         # Split the data in train & val
+         train_ds_size=int(0.9 * len(self.dataset))
+         val_ds_size=len(self.dataset)-train_ds_size        
+         
+         train_datasource, val_datasource= random_split(self.dataset,[train_ds_size,val_ds_size])    
+         
+         # Instanciate TranslateDataset for train and val
+         train_ds=TranslateDataset(train_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
+         val_ds=TranslateDataset(val_datasource,self.tokenizer_src, self.tokenizer_tgt,self.config)
+         
+         # Instanciate the DataLoaders
+         train_dataloader=DataLoader(train_ds, batch_size=self.config["batch_size"],shuffle=True)
+         val_dataloader=DataLoader(val_ds, batch_size=1,shuffle=False)
+         
+         return train_dataloader,val_dataloader
+ ```
 
+## Config
+
+Here is the `config` `dict` for reference. We will add more values to it as needed for training later.
+
+- `batch_size` -  Set based on the GPU you will be using.
+- `seq_len` - Set based on length of train vocabulary. Implement truncation logic if needed.
+- `lang_src` & `lang_tgt` - Any supported language available. 
+
+```python
+config = {
+    "batch_size": 8,
+    "seq_len": 500,
+    "lang_src": "en",
+    "lang_tgt": "fr"
+}
+```
+
+Lets run everything to make sure there are no typos. Get the fist item from the `val_dataloader` and print their shapes. 
+
+```python
+dp=DataProcessing(config=config)
+train_dataloader,val_dataloader=dp.get_dataloaders()
+for item in val_dataloader:
+    print(f"encoder_input shape : {item['encoder_input'].shape}")
+    print(f"decoder_input shape : {item['decoder_input'].shape}")
+    print(f"src_mask shape : {item['src_mask'].shape}")
+    print(f"tgt_mask shape : {item['tgt_mask'].shape}")
+    print(f"target_label shape : {item['target_label'].shape}")
+    break
+```
+
+```
+encoder_input shape : torch.Size([1, 500])
+decoder_input shape : torch.Size([1, 500])
+src_mask shape : torch.Size([1, 1, 1, 500])
+tgt_mask shape : torch.Size([1, 1, 500, 500])
+target_label shape : torch.Size([1, 500])
+```
+
+## Conclusion
+
+In conclusion, data processing and preparation are foundational steps in building any machine learning model, and the Transformer architecture is no exception. In this blog post, we've explored the essential tasks involved in preparing data for training a Transformer model from scratch using PyTorch. By following along with our step-by-step guide, you've learned how to download data, tokenize it, and handle padding efficiently. These skills are crucial for ensuring that your model can effectively learn from the data and produce meaningful results. Armed with this knowledge, you're now well-equipped to move forward with training your own Transformer model and exploring its capabilities further. Stay tuned for the next installment in our series, where we'll delve deeper into the intricacies of implementing the Transformer architecture in PyTorch. 
 
