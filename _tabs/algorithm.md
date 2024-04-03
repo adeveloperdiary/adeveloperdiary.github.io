@@ -15,7 +15,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 {: .prompt-danger }
 
 - **Two Pointers**
-  - [Sort Colors](two-pointers/sort-colors/)
+  - :green_heart: [Sort Colors](two-pointers/sort-colors/)
 - **Binary Search**
-  - [Valid Perfect Square](two-pointers/valid-erfect-square/)
+  - :green_heart: [Valid Perfect Square](two-pointers/valid-erfect-square/)
+  - :yellow_heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
 
