@@ -180,6 +180,9 @@ compress_html:
   ignore:
     envs: [development]
 
+plugins:
+  - jemoji
+
 exclude:
   - "*.gem"
   - "*.gemspec"
