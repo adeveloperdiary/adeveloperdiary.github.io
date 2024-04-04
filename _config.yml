@@ -126,16 +126,18 @@ baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
-    css_class: highlight
-    # default_lang: console
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+
+comments:
+  active: "giscus"
+    enabled: true
+    repo: "adeveloperdiary/adeveloperdiary.github.io"
+    repo_id: "R_kgDOLgBALg"
+    category: "Announcements"
+    category_id: "DIC_kwDOLgBALs4CecBM"
+    mapping: "pathname"
+    input_position: "bottom"
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: "1"
 
 collections:
   tabs:
