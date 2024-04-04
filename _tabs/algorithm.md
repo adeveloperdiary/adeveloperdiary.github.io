@@ -18,5 +18,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Sort Colors](two-pointers/sort-colors/)
 - **Binary Search**
   - :green_heart: [Valid Perfect Square](two-pointers/valid-erfect-square/)
-  - :yellow_heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
+  - :heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
 

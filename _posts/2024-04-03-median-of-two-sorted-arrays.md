@@ -9,8 +9,8 @@ hidden: true
 > All diagrams presented herein are original creations, meticulously designed to enhance comprehension and recall. Crafting these aids required considerable effort, and I kindly request attribution if this content is reused elsewhere.
 {: .prompt-danger }
 
-> **Difficulty** : Medium
-{: .prompt-warning }
+> **Difficulty** :  Hard
+{: .prompt-danger }
 
 > Binary Search to find left sub array
 {: .prompt-info }
@@ -30,56 +30,90 @@ Given two sorted arrays **nums1** and **nums2** of size **m** and **n** respecti
 - **Input** : nums1 = [1,2], nums2 = [3,4]
 - **• Output :**  `2.5`
 
+## High Level Idea
+
+- **Brute force solution** : The simplest solution to this problem is to combine all the numbers, sort them & then find the median. Now we all know that there must be a better way to solve it. 
+- :high_brightness: The **high level idea** is to keep the arrays as is. Now even if we have a combined sorted array, we just need the first half of it to find the median. Which means, we never have to sort the complete array anyway. We can just try to search the median in the first half of the virtually combined array. (We will find out how to do that next) 
+
+> Now you might be thinking that how in the world one might come up with this idea in an interview. You need to look for clues, in this case the problem statement indicates the individual arrays are already sorted. If this wasn't the case we would have implemented the brute force solution. However the already sorted arrays provides the clue that we parhaps need to use a seaching algorith. Binary Search is very flexible and can be modified to fit the needs. 
+{: .prompt-tip }
+
 ## Solution
 
-- The problem can be solved in O(log n+k) by first scanning the array to find the first closest element and then using two pointers to find k closent elements. The complexity arises when the target number **x** is not in **arr**. 
-- :fire: One solution is to convert this to a **Sliding Window** & **Binary Search** problem. Since the array is already sorted, we can try to find the **window** in which the `k` elements exists (They will always be in a window). 
-- We can start from right [or left] most and use the right [or left] pointer to keep track of the start of the window.
+- Let's understand the below problem. We have two arrays. We can find the median if we know the left half of the joined array which is marked with green border. Notice, the numbers with green borders are also always at the left side of the two input arrays.  
 
-- Lets use this example is the diagram:
-  - **Input** : `arr = [1,2,3,4,5,6,7]`, `k = 4`, `x = 5`
-  - **Output** : `[3,4,5,6]`
+<img src="../assets/img/image-20240404003203975.png" alt="image-20240404003203975" style="zoom:40%;" />
 
-![image-20240403172854483](../assets/img/image-20240403172854483.jpg)
+- So we can take the smaller input array, start at the middle and using binary seach find out how many of the green boxes will be participating from it. We know the total length, `7` in this case. So if from the smaller input array there are `n` participating green boxes then for the larger input array it will be `7/2-n`
+  - Binary Search just to speedup the process, otherwise can go element by element left or right.
+- The next question is, how do we know where to stop? Lets call the smaller array as `A` and the larger array as `B`. Then if `A[midA]<= B[BPtr+1] and B[BPtr]<A[midA+1]` then we will know we have found the split index.Here `BPtr = total_len/2 - midA`
+- We will use **Binary search** will be run only on the **smaller array** for efficiency.
+- Here is the visualization of the problem.
+
+<img src="../assets/img/image-20240403214658620.png" alt="image-20240403214658620" style="zoom:50%;" />
+
+This is another example with code.
+
+![image-20240403214927064](../assets/img/image-20240403214927064.jpg)
+
+### Edge Case
+
+There is an edge case here when one array has all the smaller numbers than another array. For this we can assign the `midA` as either `-inf` or `+inf` 
+
+![image-20240403214500810](../assets/img/image-20240403214500810.jpg)
 
 ## Code
 
 ```python
-def find_closest_elements(arr, k, x):
-    # Start right ptr from len(arr)-k
-    l, r = 0, len(arr)-k
+def find_median_in_sorted_arrays(nums1, nums2):
+    A, B = nums1, nums2
+    total_len = len(A)+len(B)
+    half=total_len//2
+    
+    if len(A) > len(B):
+        A, B = B, A
 
-    # l < r and not l <=r 
-    # We do not want to run this
-    # when l == r as this was already validated 
-    while l < r:
-        # Find the middle ptr
-        mid = (l+r)//2
+    # Binary search in the smaller array
+    l, r = 0, len(A)-1
+    while True:
+        # Start at the mid point
+        midA = (l+r)//2
+        # -2 as we have two arrays with 0 index
+        ptrB = half-midA-2
 
-        if x-arr[mid] > arr[mid+k]-x:
-            # if the current middle value is
-            # farther away than the value after
-            # the window then move the window
-            # right -> The intention is to keep 
-            # finding closest values
-            l = mid+1
+        # Out of bound conditions
+        A_Left = A[midA] if midA >= 0 else float("-inf")
+        A_right = A[midA+1] if midA+1 < len(A) else float("inf")
+        B_Left = B[ptrB] if ptrB >= 0 else float("-inf")
+        B_right = B[ptrB+1] if ptrB+1 < len(B) else float("inf")
+
+        # terminating condition.
+        if A_Left < B_right and B_Left < A_right:
+            # We have partitioned the arrays using
+            # midA and ptrB
+
+            # There are two cases for finding median
+            # 1. Even 2. Odd
+
+            if total_len % 2 == 0:  # Even case
+                # max of two left partition and 
+                # min of two right partition
+                return (max(A_Left, B_Left)+min(A_right, B_right))/2
+            else:  # odd case
+                # min of both the right partition
+                return min(A_right, B_right)
+        elif A_Left > B_right:  # Move left
+            r = midA-1
         else:
-            # if the current middle value is
-            # closer or equal than the value after
-            # the window then move the window
-            # left to the mid ptr
-            r = mid  # Not m+1
-    return arr[r:r+k]
+            l = midA+1
 
 
-print(find_closest_elements([1, 2, 3, 4, 5, 6, 7], 4, 5))
+print(find_median_in_sorted_arrays([2, 3, 4, 5], [1, 2, 4]))
 ```
 
 ```
-[3, 4, 5, 6]
+3
 ```
-
-
 
 ## Runtime Complexity
 
