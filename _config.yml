@@ -136,7 +136,6 @@ comments:
     category_id: "DIC_kwDOLgBALs4CecBM"
     mapping: "pathname"
     input_position: "bottom"
-    lang: # optional, default to the value of `site.lang`
     reactions_enabled: "1"
 
 collections:
