@@ -19,4 +19,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 - **Binary Search**
   - :green_heart: [Valid Perfect Square](two-pointers/valid-erfect-square/)
   - :heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
+  - :heart: [Median of Two Sorted Arrays](two-pointers/median-of-two-sorted-arrays/)
 
