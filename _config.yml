@@ -126,18 +126,6 @@ baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
-
-comments:
-  active: "giscus"
-    enabled: true
-    repo: "adeveloperdiary/adeveloperdiary.github.io"
-    repo_id: "R_kgDOLgBALg"
-    category: "Announcements"
-    category_id: "DIC_kwDOLgBALs4CecBM"
-    mapping: "pathname"
-    input_position: "bottom"
-    reactions_enabled: "1"
-
 collections:
   tabs:
     output: true
