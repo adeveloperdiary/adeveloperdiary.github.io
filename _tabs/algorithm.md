@@ -21,4 +21,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
   - :heart: [Median of Two Sorted Arrays](two-pointers/median-of-two-sorted-arrays/)
   - :green_heart: [Search in Rotated Sorted Array](two-pointers/search-in-rotated-sorted-array/)
+    - :green_heart: [Search in Rotated Sorted Array II](two-pointers/search-in-rotated-sorted-array-ii/)
+- **Sliding Window**
+  - Find Maximum in Sliding Window
+
 
