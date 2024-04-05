@@ -14,6 +14,8 @@ Upon sharing a demonstration, which was significantly richer than the one presen
 
 In light of Adobe's decision to sunset Flash by the end of 2020, I have chosen to commemorate its legacy by offering insights and early code snippets from this pioneering framework. I take pride in the fact that this framework received validation and endorsement from esteemed figures such as [Yakov Fain](https://yakovfain.com/), a Java Champion, for adoption within enterprise environments. Notably, numerous applications powered by this framework have remained operational in production systems for over 12 years without encountering significant issues.
 
+Link to the github repo : [https://github.com/adeveloperdiary/Web-Application-Desktop-Framework](https://github.com/adeveloperdiary/Web-Application-Desktop-Framework)
+
 Please find an early demonstration of the framework below.
 
 ![image](https://github.com/adeveloperdiary/Web-Application-Desktop-Framework/raw/master/images/waf.gif)

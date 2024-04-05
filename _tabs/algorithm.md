@@ -23,6 +23,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Search in Rotated Sorted Array](two-pointers/search-in-rotated-sorted-array/)
     - :green_heart: [Search in Rotated Sorted Array II](two-pointers/search-in-rotated-sorted-array-ii/)
 - **Sliding Window**
-  - Find Maximum in Sliding Window
+  - :green_heart: [Find Maximum in Sliding Window](sliding-window/find-maximum-in-sliding-window/)
 
 
