@@ -27,7 +27,7 @@ There is an integer array **nums** sorted in **non-decreasing order** (not neces
 
 ## Solution
 
-- Very similar to the previous problem. [Search in Rotated Sorted Array](two-pointers/search-in-rotated-sorted-array/)
+- Very similar to the previous problem. [Search in Rotated Sorted Array](https://adeveloperdiary.com/algorithm/two-pointers/search-in-rotated-sorted-array/)
 
 - The main complexity is we **can’t run** binary search if  `nums[l] == nums[m]`. This this case just move the **left** pointer to right by **one step**.
 
