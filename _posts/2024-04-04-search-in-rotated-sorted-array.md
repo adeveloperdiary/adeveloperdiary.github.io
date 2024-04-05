@@ -27,59 +27,70 @@ Given the array **nums** after the **possible** **rotation** and an integer **ta
 
 ## Solution
 
+- We need to run a modified binary search for solving this.
+- First need to find which side of middle is sorted & then based on it check for the conditions.
+
 ![Search in Rotated Sorted Array](../assets/img/search_in_rotated_sorted_array.jpg)
+
+Its very important to understand the above 4 diagrams.  They shows the logic on how to move `l` and `r` pointers.
 
 ##  Code
 
 ```python
-def find_median_in_sorted_arrays(nums1, nums2):
-    A, B = nums1, nums2
-    total_len = len(A)+len(B)
-    half=total_len//2
-    
-    if len(A) > len(B):
-        A, B = B, A
+def rotated_search(nums, target):
+    l, r = 0, len(nums) - 1
+    while l <= r:
+        mid = (l + r) // 2
 
-    # Binary search in the smaller array
-    l, r = 0, len(A)-1
-    while True:
-        # Start at the mid point
-        midA = (l+r)//2
-        # -2 as we have two arrays with 0 index
-        ptrB = half-midA-2
+        # Return if target is found
+        if target == nums[mid]:
+            return mid
 
-        # Out of bound conditions
-        A_Left = A[midA] if midA >= 0 else float("-inf")
-        A_right = A[midA+1] if midA+1 < len(A) else float("inf")
-        B_Left = B[ptrB] if ptrB >= 0 else float("-inf")
-        B_right = B[ptrB+1] if ptrB+1 < len(B) else float("inf")
+        # If left is smaller than middle then
+        # left of the middle is sorted.
+        if nums[l] <= nums[mid]:
+            # there are three loctions where
+            # the trget could be present.
+            # We need to check for all three
 
-        # terminating condition.
-        if A_Left < B_right and B_Left < A_right:
-            # We have partitioned the arrays using
-            # midA and ptrB
-
-            # There are two cases for finding median
-            # 1. Even 2. Odd
-
-            if total_len % 2 == 0:  # Even case
-                # max of two left partition and 
-                # min of two right partition
-                return (max(A_Left, B_Left)+min(A_right, B_right))/2
-            else:  # odd case
-                # min of both the right partition
-                return min(A_right, B_right)
-        elif A_Left > B_right:  # Move left
-            r = midA-1
+            if target > nums[mid]:
+                # 1. Target is right of middle and
+                # in the same partition
+                # In this case move left to mid +1
+                l = mid + 1
+            elif target < nums[l]:
+                # 2. target is in the right partition
+                # In this case move the left to mid+1
+                l = mid + 1
+            else:
+                # 3. Target is left of middle in the same
+                # sorted partition
+                # In this case move right to mid-1
+                r = mid - 1
         else:
-            l = midA+1
+            # The right of the middle is sorted.
+            # Again check for three conditions.
+            if target < nums[mid]:
+                # 1. Target is in the left of the
+                # middle and in same partition
+                # In this case move right to mid-1
+                r = mid - 1
+            elif target > nums[r]:
+                # 2. Target is in the other partition
+                # In this case move right to mid-1
+                r = mid - 1
+            else:
+                # 3. Target is right of middle in the
+                # same sorted partition
+                # In this case move left to mid+1
+                l = mid + 1
 
-
-print(find_median_in_sorted_arrays([2, 3, 4, 5], [1, 2, 4]))
+    return -1
+  print(rotated_search([4,5,6,7,0,1,2],0))
 ```
 
 ```
-3
+4
 ```
 
 ## Runtime Complexity
