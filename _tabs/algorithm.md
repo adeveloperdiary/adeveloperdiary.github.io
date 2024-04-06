@@ -18,11 +18,12 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Sort Colors](two-pointers/sort-colors/)
 - **Binary Search**
   - :green_heart: [Valid Perfect Square](two-pointers/valid-erfect-square/)
-  - :heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
-  - :heart: [Median of Two Sorted Arrays](two-pointers/median-of-two-sorted-arrays/)
   - :green_heart: [Search in Rotated Sorted Array](two-pointers/search-in-rotated-sorted-array/)
     - :green_heart: [Search in Rotated Sorted Array II](two-pointers/search-in-rotated-sorted-array-ii/)
+  - :heart: [Find K Closest Elements](two-pointers/find-k-closest-elements/)
+  - :heart: [Median of Two Sorted Arrays](two-pointers/median-of-two-sorted-arrays/)
 - **Sliding Window**
+  - :green_heart: [Longest Substring Without Repeating Characters](sliding-window/longest-substring-without-repeating-characters/) (Classic Sliding Window Problem)
   - :green_heart: [Find Maximum in Sliding Window](sliding-window/find-maximum-in-sliding-window/)
 
 
