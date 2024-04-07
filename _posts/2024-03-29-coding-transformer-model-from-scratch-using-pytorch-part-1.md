@@ -662,7 +662,7 @@ Notice both encoder and decoder have the same `FeedForwardBlock`, which can be e
 $$
 FF(x) = \text{ReLU}(XW_1 + b_1)W_2+b_2
 $$
-<img src="../assets/img/coding-transformer-model-from-scratch-using-pytorch-part-1-adeveloperdiary-8.jpg" alt="coding-transformer-model-from-scratch-using-pytorch-part-1-adeveloperdiary" style="zoom:33%;" />
+<img src="../assets/img/coding-transformer-model-from-scratch-using-pytorch-part-1-adeveloperdiary-8.jpg" alt="coding-transformer-model-from-scratch-using-pytorch-part-1-adeveloperdiary" style="zoom:50%;" />
 
 It's very straight forward, hence skipping the detail explnation.
 

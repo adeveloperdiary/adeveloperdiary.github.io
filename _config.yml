@@ -40,7 +40,8 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: iuBwQSXKf_fkpK2_akuNDSpwM8Slxu3mBdPDBA_ySC0
+#google_site_verification: iuBwQSXKf_fkpK2_akuNDSpwM8Slxu3mBdPDBA_ySC0
+google-site-verification : bWormjvP7Epc-nrrkq1yd6_Y_2y4sQ6GV44qC-jvB6I
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings

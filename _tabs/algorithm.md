@@ -25,5 +25,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 - **Sliding Window**
   - :green_heart: [Longest Substring Without Repeating Characters](sliding-window/longest-substring-without-repeating-characters/) (Classic Sliding Window Problem)
   - :green_heart: [Find Maximum in Sliding Window](sliding-window/find-maximum-in-sliding-window/)
-
+  - :green_heart: [Minimum Window Substring](sliding-window/minimum-window-substring/)
 
