@@ -1,6 +1,6 @@
 ---
 title: Linked List - Remove Linked List Elements
-categories: [algorithm, linked-link]
+categories: [algorithm, linked-list]
 tags: [datastructure]
 hidden: true
 
@@ -88,7 +88,7 @@ elif curr.next is None:
 Here is the full code.
 
 ```python
-def removeElements(head, val):
+def remove_elements(head, val):
     dummy=ListNode(0,head)
     curr=dummy.next
     prev=dummy

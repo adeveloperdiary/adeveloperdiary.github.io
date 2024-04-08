@@ -1,6 +1,6 @@
 ---
 title: Linked List - Reorder List
-categories: [algorithm, linked-link]
+categories: [algorithm, linked-list]
 tags: [datastructure]
 hidden: true
 
