@@ -12,7 +12,7 @@ hidden: true
 > **Difficulty** :  Easy
 {: .prompt-tip }
 
-> Slow & Fast Pointer, Reverse Linked List, Merge Linked List
+> 1. Find middle, 2. Reverse Linked List, 3. Merge Linked List
 {: .prompt-info }
 
 ## Problem

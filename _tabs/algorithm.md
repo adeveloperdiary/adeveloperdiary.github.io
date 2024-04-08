@@ -29,5 +29,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Longest Repeating Character Replacement](sliding-window/longest-repeating-character-replacement/)
 - **Linked List**
   - :green_heart: [Reorder List](linked-link/reorder-list/)
+  - :green_heart: [Remove Linked List Elements](linked-link/remove-linked-list-elements/)
 
 
