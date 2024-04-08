@@ -28,7 +28,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Minimum Window Substring](sliding-window/minimum-window-substring/)
   - :green_heart: [Longest Repeating Character Replacement](sliding-window/longest-repeating-character-replacement/)
 - **Linked List**
-  - :green_heart: [Reorder List](linked-link/reorder-list/)
-  - :green_heart: [Remove Linked List Elements](linked-link/remove-linked-list-elements/)
+  - :green_heart: [Reorder List](linked-list/reorder-list/)
+  - :green_heart: [Remove Linked List Elements](/linked-list/remove-linked-list-elements/)
+  - :green_heart: [Add Two Numbers](/linked-list/add-two-numbers/)
 
 
