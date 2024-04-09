@@ -37,5 +37,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 - **Tree**
   - :green_heart: [Balanced Binary Tree](tree/balanced-binary-tree/)
   - :green_heart: [Count Good Nodes in Binary Tree](tree/count-good-nodes-in-binary-tree/)
+  - :green_heart: [Merge Two Binary Trees](tree/merge-two-binary-trees/)
 
 
