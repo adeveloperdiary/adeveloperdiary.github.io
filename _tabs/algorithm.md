@@ -31,5 +31,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Reorder List](linked-list/reorder-list/)
   - :green_heart: [Remove Linked List Elements](linked-list/remove-linked-list-elements/)
   - :green_heart: [Add Two Numbers](linked-list/add-two-numbers/)
-
+  - :green_heart: [Swap Nodes in Pairs](linked-list/swap-nodes-in-pairs/)
+  - :green_heart: [Reverse Nodes in K-Group]()
 
