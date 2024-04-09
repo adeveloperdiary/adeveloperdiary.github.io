@@ -34,4 +34,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Swap Nodes in Pairs](linked-list/swap-nodes-in-pairs/)
   - :green_heart: [Reverse Nodes in K-Group](linked-list/reverse-nodes-in-k-group/)
   - :green_heart: [Sort List](linked-list/sort-list/)
+- Tree
+  - :green_heart: [Balanced Binary Tree](tree/balanced-binary-tree/)
+
 
