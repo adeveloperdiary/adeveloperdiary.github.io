@@ -39,5 +39,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Count Good Nodes in Binary Tree](tree/count-good-nodes-in-binary-tree/)
   - :green_heart: [Merge Two Binary Trees](tree/merge-two-binary-trees/)
   - :green_heart: [Convert Sorted Array to Binary Search Tree](tree/convert-sorted-array-to-binary-search-tree/)
-
+  - :green_heart: [Validate Binary Search Tree](tree/validate-binary-search-tree/)
+  - :green_heart: [Sum Root to Leaf Numbers](tree/sum-root-to-leaf-numbers/)
 
