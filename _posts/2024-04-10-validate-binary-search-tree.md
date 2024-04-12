@@ -13,7 +13,7 @@ mermaid: true
 > **Difficulty** :  Easy
 {: .prompt-tip }
 
-> PreOrder DFS
+> PreOrder DFS, Set Min and Max Boundary
 {: .prompt-info }
 
 ## Problem
@@ -73,16 +73,33 @@ def dfs(root, min_val, max_val):
   if not root:
     return True
   
-  if not (root.val>min_val and root.val< max_val):
+  if not (root.val > min_val and root.val < max_val):
     return False
 ```
 
 ### Traverse
 
+Now traverse through `left` and `right` children. The only logic here to set the `max_val` and `min_val` accordingly. In case any one children returns `False` this function call should return `False` as well.
+
 ```python
+  return dfs(root.left, min_val, root.val) and dfs(root.right, root.val, max_val)
+```
+
+Finally we can call the `dfs()` function for the first time by passing the `root` node and `[-inf, +inf]` as the `min_val` and `max_val`
+
+```python
+return dfs(root, float('-inf'), float('inf'))
 ```
 
 
+
+## Visualization
+
+Here is the visualization of the problem.
+
+
+
+<img src="../assets/img/image-20240411203833410.png" alt="image-20240411203833410" style="zoom: 50%;" />
 
 ## Final Code
 
@@ -95,6 +112,20 @@ Here is the full code.
 #         self.left = left
 #         self.right = right
 
+def is_valid_bst(root:TreeNode):
+  def dfs(root, min_val, max_val):
+    if not root:
+      return True
+    
+    if not (root.val > min_val and root.val < max_val):
+      return False
+    
+    return dfs(root.left, min_val, root.val) and dfs(root.right, root.val, max_val)
+    
+  return dfs(root, float('-inf'),float('inf'))  
+  
+  
+  
 
 ```
 
