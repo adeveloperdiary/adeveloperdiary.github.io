@@ -41,4 +41,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Convert Sorted Array to Binary Search Tree](tree/convert-sorted-array-to-binary-search-tree/)
   - :green_heart: [Validate Binary Search Tree](tree/validate-binary-search-tree/)
   - :green_heart: [Sum Root to Leaf Numbers](tree/sum-root-to-leaf-numbers/)
+  - :green_heart: [Binary Tree Right Side View](tree/binary-tree-right-side-view/)
 
