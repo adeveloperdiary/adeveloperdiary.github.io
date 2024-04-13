@@ -22,7 +22,7 @@ Given the `root` of a binary tree, imagine yourself standing on the **right side
 
 **Example 1:**
 
-<img src="../assets/img/tree.jpeg" alt="addtwonumber1"  />
+<img src="../assets/img/tree.jpeg" alt="addtwonumber1" style="zoom:67%;" />
 
 ```
 Input: root = [1,2,3,null,5,null,4]
