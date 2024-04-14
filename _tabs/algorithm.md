@@ -43,5 +43,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Sum Root to Leaf Numbers](tree/sum-root-to-leaf-numbers/)
   - :green_heart: [Binary Tree Right Side View](tree/binary-tree-right-side-view/)
   - :green_heart: [Kth Smallest Element in a BST](tree/kth-smallest-element-in-a-bst/)
+  - :green_heart: [Diameter of a Binary Tree](tree/diameter-of-a-binary-tree/)
   - :green_heart: [Construct Binary Tree from PreOrder and InOrder Traversal](tree/construct-binary-tree-from-preorder-and-inorder-traversal/)
+  - 
 
