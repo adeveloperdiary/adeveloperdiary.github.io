@@ -45,5 +45,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Kth Smallest Element in a BST](tree/kth-smallest-element-in-a-bst/)
   - :green_heart: [Diameter of a Binary Tree](tree/diameter-of-a-binary-tree/)
   - :green_heart: [Construct Binary Tree from PreOrder and InOrder Traversal](tree/construct-binary-tree-from-preorder-and-inorder-traversal/)
-  - 
+  - :green_heart: [Same Tree](tree/same-tree/)
 
