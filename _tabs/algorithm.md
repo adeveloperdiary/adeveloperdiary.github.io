@@ -48,4 +48,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Same Tree](tree/same-tree/)
   - :green_heart: [Serialize and Deserialize Binary Tree](tree/serialize-and-deserialize-binary-tree/)
   - :yellow_heart: [Binary Tree Maximum Path Sum](tree/binary-tree-maximum-path-sum/)
+  - :heart: [Flatten Binary Tree to Linked List](tree/flatten-binary-tree-to-linked-list/)
 

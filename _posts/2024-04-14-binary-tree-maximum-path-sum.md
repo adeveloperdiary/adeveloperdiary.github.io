@@ -32,7 +32,7 @@ Output: 6
 Explanation: The optimal path is 2 -> 1 -> 3 with a path sum of 2 + 1 + 3 = 6.
 ```
 
-**Example 1:**
+**Example 2:**
 
 <img src="../assets/img/exx2.jpeg" alt="addtwonumber1" style="zoom:67%;" />
 
