@@ -130,6 +130,7 @@ def flatten(root):
       
     # Converting all the if else to one line
     return rightmost_leaf or rightmost_leaf or root
+  dfs(root)
     
 ```
 

@@ -47,6 +47,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Construct Binary Tree from PreOrder and InOrder Traversal](tree/construct-binary-tree-from-preorder-and-inorder-traversal/)
   - :green_heart: [Same Tree](tree/same-tree/)
   - :green_heart: [Serialize and Deserialize Binary Tree](tree/serialize-and-deserialize-binary-tree/)
+  - :green_heart: [Trim a Binary Search Tree](tree/trim-a-binary-search-tree/)
   - :yellow_heart: [Binary Tree Maximum Path Sum](tree/binary-tree-maximum-path-sum/)
   - :heart: [Flatten Binary Tree to Linked List](tree/flatten-binary-tree-to-linked-list/)
 
