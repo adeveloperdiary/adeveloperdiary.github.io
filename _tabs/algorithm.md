@@ -46,4 +46,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Diameter of a Binary Tree](tree/diameter-of-a-binary-tree/)
   - :green_heart: [Construct Binary Tree from PreOrder and InOrder Traversal](tree/construct-binary-tree-from-preorder-and-inorder-traversal/)
   - :green_heart: [Same Tree](tree/same-tree/)
+  - :green_heart: [Serialize and Deserialize Binary Tree](tree/serialize-and-deserialize-binary-tree/)
 

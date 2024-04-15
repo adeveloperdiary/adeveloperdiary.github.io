@@ -18,33 +18,76 @@ mermaid: true
 
 ## Problem
 
-Given the roots of two binary trees `p` and `q`, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+
+Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.
 
 **Example 1:**
 
-<img src="../assets/img/ex1.jpeg" alt="addtwonumber1" style="zoom:67%;" />
+<img src="../assets/img/serdeser.jpeg" alt="addtwonumber1" style="zoom:67%;" />
 
 ```
-Input: p = [1,2,3], q = [1,2,3]
-Output: true
+Input: root = [1,2,3,null,null,4,5]
+Output: [1,2,3,null,null,4,5]
 ```
 
-**Example 2:**
+## Solution
 
-<img src="../assets/img/ex2.jpeg" alt="addtwonumber1" style="zoom:67%;" />
+### Serialize
+
+The solution for `serialize` is very simple. We will perform PreOrder traversal and save the values in an array. The only important part is to append `NONE` for all the `left` and `right` child for leaf node. 
+
+```python
+def serialize(root):
+  result = []
+  def dfs(root):
+    if not root:
+      result.append("NONE")
+      return
+    
+    result.append(str(root.val))
+    
+    dfs(root.left)
+    dfs(root.right)
+  print(result)
+  return result  
+```
+
+The output is interesting to understand. The diagram of the tree is given above in **Example 1**. 
 
 ```
-Input: p = [1,2], q = [1,null,2]
-Output: false
+['1', '2', 'NONE', 'NONE', '3', '4', 'NONE', 'NONE', '5', 'NONE', 'NONE']
 ```
 
-**Example 3:**
+### Deserialize
 
-<img src="../assets/img/ex3.jpeg" alt="addtwonumber1" style="zoom:67%;" />
+The only important logic for `deserialize` is the base case. Once we see `NONE`, we will assume that it's the end and return `None`. Then move the pointer by `1`
 
+```python
+def deserialize(result_arr):
+  pointer = 0
+  
+  def dfs():
+    nonlocal pointer
+    if result_arr[pointer] == 'NONE':
+      pointer+=1
+      return None
 ```
-Input: p = [1,2,1], q = [1,1,2]
-Output: false
+
+Create the `root` node. Increment the `pointer`.
+
+```python
+    root = TreeNode(val = int(result_arr[pointer]))
+    pointer +=1
+```
+
+Create nodes for `left` and `right` sub-trees.
+
+```python
+    root.left = dfs()
+    root.right = dfs()
+    return root
+  return dfs()
 ```
 
 ## Final Code 
@@ -58,24 +101,31 @@ Here is the full code.
 #         self.left = left
 #         self.right = right
 
-def same_tree(p:TreeNode, q:TreeNode):
-  # Return None if both the nodes
-  # are None.
-  if not p and not q:
-    return True
-  # If previous if condition is not 
-  # True then its possible for one
-  # of the node to be None while
-  # other one is not None.
-  if not p or not q:
-    return False
+def serialize(root):
+  result = []
+  def dfs(root):
+    if not root:
+      result.append("NONE")
+      return
+    
+    result.append(str(root.val))
+    
+    dfs(root.left)
+    dfs(root.right)
+  return result  
 
-  # Return False if the values 
-  # do not match
-  if p.val != q.val:
-    return False
-
-  #Traverse left and right node and return
-  return same_tree(p.left, q.left) and same_tree(p.right, q.right)
-     
+def deserialize(result_arr):
+  pointer = 0
+  
+  def dfs():
+    nonlocal pointer
+    if result_arr[pointer] == 'NONE':
+      pointer+=1
+      return None
+    root = TreeNode(val = int(result_arr[pointer]))
+    pointer +=1
+    root.left = dfs()
+    root.right = dfs()
+    return root
+  return dfs()
 ```
