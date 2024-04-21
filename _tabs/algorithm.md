@@ -54,4 +54,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 - **Graph**
   - :green_heart: [Network Delay Time](graph/network-delay-time/)
   - :green_heart: [Clone Graph](graph/clone-graph/)
+  - :green_heart: [Graph Valid Tree](graph/graph-valid-tree/)
 
