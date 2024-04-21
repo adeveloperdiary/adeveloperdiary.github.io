@@ -10,8 +10,8 @@ mermaid: true
 > All diagrams presented herein are original creations, meticulously designed to enhance comprehension and recall. Crafting these aids required considerable effort, and I kindly request attribution if this content is reused elsewhere.
 {: .prompt-danger }
 
-> **Difficulty** :  Easy
-{: .prompt-tip }
+> **Difficulty** :  Medium
+{: .prompt-warning }
 
 > Adjacency List, BFS
 {: .prompt-info }
@@ -64,7 +64,10 @@ adjacency_list = collections.defaultdict(list)
 word_list.append(begin_word)
 ```
 
-Loop through the `word_list`, for each `word`, construct a pattern where one word can be wild. We will use `__` symbol to indicate the wild. :fire: The most important part is, this edge list is for the `pattern` and not for the `word`. You can also do the opposite and still solve the problem though but the runtime complexity will be higher (will be more clear later).   
+Loop through the `word_list`, for each `word`, construct a pattern where one word can be wild. We will use `__` symbol to indicate the wild. :fire: The most important part is, this edge list is for the `pattern` and not for the `word`. 
+
+- You can also do the opposite and still solve the problem, but the runtime complexity will be higher (will be more clear later).   
+- You can also build a bi-directional graph and solve this. However we are going to create bi-directional as we can easily find neighbors of `word` in `word_list` by using for loop to regenerate the pattern again. So are just using the `pattern` as the key in the adjacent list (uni-directional)
 
 ```python
 for word in word_list:
@@ -93,9 +96,24 @@ Here is how the `adjacency_list` looks for the **Example 1** given above.
 'hi_': ['hit']})
 ```
 
-Here is the visualization of the graph. Notice all we have to do is now to traverse the graph to find path to `end_word` (cog) starting from `begin_word` (hit).
+Here is the visualization of the graph. Notice all we have to do is now to traverse the graph to find path to `end_word` (cog) starting from `begin_word` (hit). 
 
 <img src="../assets/img/image-20240421171412867.png" alt="image-20240421171412867" style="zoom:50%;" />
+
+We will start with the `visited` `set()` and initialize the queue for our BFS.
+
+```python
+visited = set([begin_word])
+queue = collections.deque([begin_word])
+```
+
+The final return will be this `result` variable.
+
+```python
+result = 1
+```
+
+
 
 ## Final Code
 

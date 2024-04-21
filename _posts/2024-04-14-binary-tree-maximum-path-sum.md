@@ -10,8 +10,8 @@ mermaid: true
 > All diagrams presented herein are original creations, meticulously designed to enhance comprehension and recall. Crafting these aids required considerable effort, and I kindly request attribution if this content is reused elsewhere.
 {: .prompt-danger }
 
-> **Difficulty** :  Easy
-{: .prompt-tip }
+> **Difficulty** :  Medium
+{: .prompt-warning }
 
 > DFS
 {: .prompt-info }
