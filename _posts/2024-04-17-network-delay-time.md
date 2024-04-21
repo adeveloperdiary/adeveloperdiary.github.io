@@ -1,6 +1,6 @@
 ---
 title: Tree - Network Delay Time
-categories: [algorithm, tree]
+categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
 mermaid: true

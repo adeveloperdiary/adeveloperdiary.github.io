@@ -52,7 +52,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :yellow_heart: [Binary Tree Maximum Path Sum](tree/binary-tree-maximum-path-sum/)
   - :heart: [Flatten Binary Tree to Linked List](tree/flatten-binary-tree-to-linked-list/)
 - **Graph**
-  - :green_heart: [Network Delay Time](tree/balanced-binary-tree/)
-  - 
-
+  - :green_heart: [Network Delay Time](graph/network-delay-time/)
+  - :green_heart: [Clone Graph](graph/clone-graph/)
 
