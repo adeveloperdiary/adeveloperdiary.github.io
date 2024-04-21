@@ -54,11 +54,50 @@ Here is the entire code and related diagram. Let's understand each part now.
 
 ![image-20240421124957771](../assets/img/image-20240421124957771.png)
 
+First step is to create the **Adjacency List**. We can find all the words which are one word different than current word and create an **Adjacency List** using those words. So `hit` can have 3 words which are one letter different that `hit`, there are  `_it, h_t, hi_`.  The idea is to use these patterns to find which words from the dictionary can be reached.
 
+The `begin_word` is not part of the `word_list`, so we will add it first as the `begin_word` will be our starting node.
 
+```python
+#def ladder_length(begin_word, end_word, word_list):
+adjacency_list = collections.defaultdict(list)
+word_list.append(begin_word)
+```
 
+Loop through the `word_list`, for each `word`, construct a pattern where one word can be wild. We will use `__` symbol to indicate the wild. :fire: The most important part is, this edge list is for the `pattern` and not for the `word`. You can also do the opposite and still solve the problem though but the runtime complexity will be higher (will be more clear later).   
 
-## Final Code 
+```python
+for word in word_list:
+  for index in range(len(word)):
+    pattern = word[:index]+"_"+word[index+1:]
+    adjacency_list[pattern].append(word)
+```
+
+Here is how the `adjacency_list` looks for the **Example 1** given above.
+
+```
+{'_ot': 
+['hot', 'dot', 'lot'], 
+'h_t': ['hot', 'hit'], 
+'ho_': ['hot'], 
+'d_t': ['dot'], 
+'do_': ['dot', 'dog'], 
+'_og': ['dog', 'log', 'cog'], 
+'d_g': ['dog'], 
+'l_t': ['lot'], 
+'lo_': ['lot', 'log'], 
+'l_g': ['log'], 
+'c_g': ['cog'], 
+'co_': ['cog'], 
+'_it': ['hit'], 
+'hi_': ['hit']})
+```
+
+Here is the visualization of the graph. Notice all we have to do is now to traverse the graph to find path to `end_word` (cog) starting from `begin_word` (hit).
+
+<img src="../assets/img/image-20240421171412867.png" alt="image-20240421171412867" style="zoom:50%;" />
+
+## Final Code
 
 Here is the full code.
 
