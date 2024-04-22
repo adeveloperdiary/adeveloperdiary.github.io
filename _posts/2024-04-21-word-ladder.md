@@ -107,13 +107,59 @@ visited = set([begin_word])
 queue = collections.deque([begin_word])
 ```
 
-The final return will be this `result` variable.
+The final return will be this `result` variable. Since we have already visited `begin_word`, we will start with `result=1`
 
 ```python
 result = 1
 ```
 
+Now, let’s traverse the `queue` until it’s empty. Then visit all the words in the queue using a `for` loop. 
 
+```python 
+while queue:
+  for _ in range(len(queue)):     
+```
+
+Get the first element (oldest) from the queue
+
+```python
+    word = queue.popleft()    
+```
+
+If this is the `end_word` return the `result`.
+
+```python
+    if word == end_word:
+      return result
+```
+
+Next we need to find all the neighbors of `word`, since the adjacency list is unidirectional we do not have the details there. So we need to find all the `pattern`s like we did when we built the adjacency list and those will be the neighbors (refer the diagram of the graph above for more clarity). 
+
+> There is one more trick here in case you have not noticed. We are not adding the `pattern` into the `queue` rather the `neighbor` of the `pattern` node. This way we are always looking for `word`s in the `word_list` to be traversed as we already know that two `word`s will always be connected using a `pattern`.
+{: .prompt-tip }
+
+If the `neighbor` is not `visited`, add it to the `visited` `set` and also to the `queue`.
+
+```python
+    for index in range(len(word)):
+      pattern = word[:index]+"_"+word[index+1:]
+      for neighbor in adjacency_list[pattern]:
+        if neighbor not in visited:
+          visited.add(neighbor)
+          queue.append(neighbor)
+```
+
+:fire: It’s very important to understand that one round of `while` loop is equal to traversing `1` layer of the tree. So it’s the best time to increment `result`
+
+```python
+    result+=1
+```
+
+Finally, if the `end_word` has not reached, return `0`
+
+```python
+return 0
+```
 
 ## Final Code
 
