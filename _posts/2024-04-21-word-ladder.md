@@ -166,10 +166,40 @@ return 0
 Here is the full code.
 
 ```python
+def ladder_length(begin_word, end_word, word_list):
+  	# Edge case for passing in leetcode
+    if end_word not in word_list:
+        return 0
 
-        
+    adjacency_list = collections.defaultdict(list)
+    word_list.append(begin_word)
 
+    for word in word_list:
+        for index in range(len(word)):
+            pattern = word[:index]+"_"+word[index+1:]
+            adjacency_list[pattern].append(word)
 
+    visited = set([begin_word])
+    queue = collections.deque([begin_word])
+    result = 1
+    while queue:
+        for _ in range(len(queue)):
+            word = queue.popleft()
+            if word == end_word:
+                return result
+            # The visited can be populated either 
+            # when inserting in the queue
+            # or when processing the word
+            visited.add(word)
+
+            for index in range(len(word)):
+                pattern = word[:index]+'_'+word[index+1:]
+                for neighbor in adjacency_list[pattern]:
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+        result += 1
+
+    return 0
 ```
 
 
