@@ -3,7 +3,6 @@ title: Tree - Binary Tree Maximum Path Sum
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

@@ -3,7 +3,6 @@ title: Tree - Binary Tree Right Side View
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

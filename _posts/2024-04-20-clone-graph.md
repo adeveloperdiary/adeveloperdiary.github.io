@@ -3,7 +3,6 @@ title: Tree - Clone Graph
 categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

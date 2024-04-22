@@ -3,7 +3,6 @@ title: Tree - Construct Binary Tree from PreOrder and InOrder Traversal
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

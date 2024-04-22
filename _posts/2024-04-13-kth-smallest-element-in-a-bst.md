@@ -3,7 +3,6 @@ title: Tree - Kth Smallest Element in a BST
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

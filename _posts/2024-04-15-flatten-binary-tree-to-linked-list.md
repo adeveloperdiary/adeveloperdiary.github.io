@@ -3,7 +3,6 @@ title: Tree - Flatten Binary Tree to Linked List
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

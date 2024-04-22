@@ -3,7 +3,6 @@ title: Tree - Trim a Binary Search Tree
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

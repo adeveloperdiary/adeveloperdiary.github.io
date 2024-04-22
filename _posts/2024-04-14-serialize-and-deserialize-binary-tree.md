@@ -3,7 +3,6 @@ title: Tree - Serialize and Deserialize Binary Tree
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

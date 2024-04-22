@@ -3,7 +3,6 @@ title: Tree - Word Ladder
 categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

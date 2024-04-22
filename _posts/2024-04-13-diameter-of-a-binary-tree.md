@@ -3,7 +3,6 @@ title: Tree - Diameter of a Binary Tree
 categories: [algorithm, tree]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 

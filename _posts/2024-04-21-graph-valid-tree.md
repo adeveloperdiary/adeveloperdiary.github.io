@@ -3,7 +3,6 @@ title: Tree - Graph Valid Tree
 categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 
