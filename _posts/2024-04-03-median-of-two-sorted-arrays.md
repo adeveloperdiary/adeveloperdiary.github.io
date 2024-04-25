@@ -28,7 +28,7 @@ Given two sorted arrays **nums1** and **nums2** of size **m** and **n** respecti
 ### Example 2:
 
 - **Input** : nums1 = [1,2], nums2 = [3,4]
-- **• Output :**  `2.5`
+- **Output :**  `2.5`
 
 ## High Level Idea
 
