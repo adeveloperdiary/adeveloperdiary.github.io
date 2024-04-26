@@ -8,6 +8,7 @@ order: 2
 
 ## Tiny Projects
 
+- [Random Algorithm Practice (with localStorage)](https://adeveloperdiary.com/algo_practice/) (2024)
 - [Automated MAC Task Tracker (Not Documented)](https://github.com/adeveloperdiary/automated_task_tracker) (2022)
 - [Personal Book Catalog](https://github.com/adeveloperdiary/MyBookCollection) (2021)
 - [Deep Learning Paper Implementations](https://github.com/adeveloperdiary/DeepLearning_MiniProjects) (2020)
