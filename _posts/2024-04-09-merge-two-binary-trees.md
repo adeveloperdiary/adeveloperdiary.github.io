@@ -70,6 +70,42 @@ root.right = merge_trees(root1.right if root1 else None,root2.right if root2 els
 return root
 ```
 
+Here is another version (if this helps).
+
+```python
+def merge_tree(root1, root2):    
+    def dfs(root1, root2):            
+        if not root1 and not root2:
+            return None
+        
+        if not root1 or not root2:
+            if root1 is not None:
+                root = TreeNode(val=root1.val)
+                root.left= dfs(root1.left, None)
+                root.right= dfs(root1.right, None)
+                return root
+            elif root2 is not None:
+                root = TreeNode(val=root2.val)
+                root.left= dfs(None, root2.left)
+                root.right= dfs(None,root2.right)
+                return root
+        
+        val1=root1.val if root1 is not None else 0
+        val2=root2.val if root2 is not None else 0
+        
+        root = TreeNode(val=val1+val2)
+        
+        root.left= dfs(root1.left, root2.left)
+        root.right= dfs(root1.right, root2.right)
+        
+        return root
+        
+    return dfs(root1,root2)
+            
+```
+
+
+
 ## Final Code
 
 Here is the full code.
