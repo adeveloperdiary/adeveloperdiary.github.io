@@ -59,7 +59,7 @@ Let’s start with the visualization of the solution.
 
 - **Base Condition**: Return `0` for `None` nodes.
 
-  - The base condition is not needed if all the nodes in the tree has a `left` and `right` nodes as in case of that the 2nd base base (explained below) will be returned and `None` node will never occur. Here is an example.
+  - The base condition is not needed if all the nodes in the tree has a `left` and `right` nodes as in case of that the 2nd base (explained below) will be returned and `None` node will never occur. Here is an example.
 
     <img src="../assets/img/tree1.jpeg" alt="addtwonumber1" style="zoom:50%;" />
 
@@ -90,11 +90,11 @@ flowchart TD
 
 ### Base Condition
 
-The base condition if there are nodes with only one child (`left` or `right`).
+The base condition if there are nodes with only one child (`left` or `right`). Then that child needs to return just `0` as num.
 
 ```python
 if not root:
-  return True
+  return 0
 ```
 
 ### Sum to New Number
@@ -102,10 +102,10 @@ if not root:
 Calculare new number.
 
 ```python
-def dfs(root, num):
+def dfs(root, sum_from_root):
   if not root:
-    return True
-  num = num * 10 + root.val
+    return 0
+  new_sum = sum_from_root * 10 + root.val
 ```
 
 ### Return sum if leaf node
@@ -114,15 +114,21 @@ Once we reach a node with no leaf nodes (`left` or `right`), we shall return the
 
 ```python
   if not root.left and not root.right:
-    return num
+    return new_sum
 ```
 
-### Traverse
+### :fire: Traverse (Add)
 
-Now traverse through `left` and `right` children. The only logic here to `sum` the returns.
+Now traverse through `left` and `right` children. The only logic here to `sum` the returns. The `sum` is bit complicated to understand and thats the only reason the problem is medium in LeetCode. 
+
+Except at the leaf level, at all other levels, the two sum of two nodes will be added. (Please refer the diagram below). So conversely every node except the leaf nodes, combines sum from two leaf nodes. 
+
+So, to achieve `111+112+113+114 = 450`, we calculate `(111+112)=223, (113+114)=227`, then combine `223 + 227 = 450`.
+
+![image-20240425223014483](../assets/img/image-20240425223014483.png)
 
 ```python
-  return dfs(root.left,num)+dfs(root.right,num)
+  return dfs(root.left,new_sum)+dfs(root.right,new_sum)
 ```
 
 Finally we can call the `dfs()` function for the first time by passing the `root` node `0` as initial value of `num`.
@@ -143,15 +149,15 @@ Here is the full code.
 #         self.right = right
 
 def sum_numbers(root:TreeNode):
-  def dfs(root, num):
+  def dfs(root, sum_from_root):
     if not root:
       return 0
     
-    num=num*10+root.val
+    new_sum=sum_from_root*10+root.val
     if not root.left and not root.right:
-      return num
+      return new_sum
     
-    return dfs(root.left,num)+dfs(root.right,num)
+    return dfs(root.left,new_sum)+dfs(root.right,new_sum)
   return dfs(root,0)  
 ```
 
