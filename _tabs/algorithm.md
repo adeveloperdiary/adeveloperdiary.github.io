@@ -56,4 +56,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Clone Graph](graph/clone-graph/)
   - :green_heart: [Graph Valid Tree](graph/graph-valid-tree/)
   - :yellow_heart: [Word Ladder](graph/word-ladder/)
+  - :yellow_heart: [Course Schedule](graph/course-schedule/)
+    - :green_heart: [Course Schedule II](graph/course-schedule-ii/)	
 
