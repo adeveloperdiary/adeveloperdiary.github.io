@@ -3,7 +3,6 @@ title: Tree - Course Schedule II
 categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
-mermaid: true
 
 ---
 
