@@ -88,7 +88,7 @@ def find_median_in_sorted_arrays(nums1, nums2):
         B_right = B[ptrB+1] if ptrB+1 < len(B) else float("inf")
 
         # terminating condition.
-        if A_Left < B_right and B_Left < A_right:
+        if A_Left <= B_right and B_Left <= A_right:
             # We have partitioned the arrays using
             # midA and ptrB
 
