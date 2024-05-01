@@ -46,7 +46,20 @@ if not root:
   return None
 ```
 
-Now we need to traverse all the way to the left leaf node as the problem statement indicates the ordering should be same as pre-order traversal. 
+We need to traverse all the way to the left leaf node as the problem statement indicates the ordering should be same as pre-order traversal. We will get the left most and right most node. Here is a diagram to understand this better. 
+
+- We are at the `root` node (pink)
+  - The `root.left` is `3` (Orange)
+  - The `root.right` is `4` (Green)
+- **Traverse**
+  - Find the `left_most` node (`3`) [Red]
+  - Find the `right_most` node (`5`) [Blue]
+- **Reassign**
+  - Now we need to align them. `left_most.right` should point to `right_most`
+  - `root.right` should be `root.left`
+  - Finally, `root.left` should be `None`
+
+![image](../assets/img/flatten_btree.jpg)
 
 ```python
 leftmost_leaf = dfs(root.left)
