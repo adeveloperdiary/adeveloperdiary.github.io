@@ -88,6 +88,9 @@ Otherwise add it to the `visited` `set` and save the `parent_weight` . :fire: Th
 > This is the extra step added on top of basic `Dijkstra's Algorithm` with BFS.
 {: .prompt-tip }
 
+> :fire: This is one of the **most important step** that you might miss to understand. The `distance` will be returned at the end, hence the `parent_weight` must be assigned to it **only after** the validation that the `parent_node` is not in the `visited` set. This way we will know `parent_node` must be part of the path. Adding this before the previous `if` will cause issues as `visited` node's weights will be returned, which is not desired. 
+{: .prompt-danger }
+
 ```python
     visited.add(parent_node)
     distance = parent_weight
