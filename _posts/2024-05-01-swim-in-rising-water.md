@@ -202,9 +202,63 @@ Here are the two flow charts.
 
 Here is the full code.
 
-```python
+### Option 1:
 
+```python
+def swin_in_water(grid):
+    N = len(grid)
+    directions = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+    min_heap = [[grid[0][0], 0, 0]]
+    visited = set((0, 0))
+
+    while min_heap:
+        t, r, c = heapq.heappop(min_heap)
+
+        if r == N-1 and c == N-1:
+            return t
+
+        for dr, dc in directions:
+            nei_r = r+dr
+            nei_c = c+dc
+            if nei_r < 0 or nei_c < 0 or nei_r == N or nei_c == N or (nei_r, nei_c) in visited:
+                continue
+            heapq.heappush(
+                min_heap, (max(t, grid[nei_r][nei_c]), nei_r, nei_c))
+            visited.add((nei_r, nei_c))
 ```
+
+**Option 2:**
+
+```python
+def swin_in_water(grid):
+    N = len(grid)
+    directions = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+    min_heap = [[grid[0][0], 0, 0]]
+    visited = set()
+    
+    while min_heap:
+        t, r, c = heapq.heappop(min_heap)
+
+        if r == N-1 and c == N-1:
+            return t
+			
+      	if (r, c) in visited:
+          continue
+          
+       	visited.add((r,c))
+      
+        for dr, dc in directions:
+            nei_r = r+dr
+            nei_c = c+dc
+            if nei_r < 0 or nei_c < 0 or nei_r == N or nei_c == N or (nei_r, nei_c) in visited:
+                continue
+            heapq.heappush(
+                min_heap, (max(t, grid[nei_r][nei_c]), nei_r, nei_c))
+
+  
+```
+
+
 
 
 
