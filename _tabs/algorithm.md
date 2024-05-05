@@ -53,6 +53,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :heart: [Flatten Binary Tree to Linked List](tree/flatten-binary-tree-to-linked-list/)
 - **Graph**
   - :green_heart: [Network Delay Time](graph/network-delay-time/)
+    - :green_heart: [Swim in Rising Water](graph/swim-in-rising-water/)
+    - :green_heart: [Walls and Gates](graph/walls-and-gates/)
   - :green_heart: [Clone Graph](graph/clone-graph/)
   - :green_heart: [Graph Valid Tree](graph/graph-valid-tree/)
   - :green_heart: [Island Perimeter](graph/island-perimeter/)
