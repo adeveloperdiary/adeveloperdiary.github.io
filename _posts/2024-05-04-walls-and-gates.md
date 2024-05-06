@@ -3,7 +3,6 @@ title: Tree - Walls and Gates
 categories: [algorithm, graph]
 tags: [datastructure]
 hidden: true
-mermaid: true
 ---
 
 > All diagrams presented herein are original creations, meticulously designed to enhance comprehension and recall. Crafting these aids required considerable effort, and I kindly request attribution if this content is reused elsewhere.
@@ -49,7 +48,7 @@ After running your function, the 2D grid should be:
 
 Here is a simpler diagram to understand. This is a Multi-Source BFS problem, means initially we are going to have more than one root in the `queue` and run BFS for all of them. 
 
-![image-20240504181832991](../assets/img/image-20240504181832991.png)
+![image-20240504181832991](../assets/img/image-20240504181832991.jpg)
 
 Start by creating the needed variables.
 
@@ -84,9 +83,9 @@ Process each node in the `queue`, set the current `distance` as the cell value, 
 ```python
 while queue:
   for _ in range(len(queue)):
-	  r,c = queue.popleft()
+    r,c = queue.popleft()
     rooms[r][c] = distance
-		for dr,dc in directions:
+    for dr,dc in directions:
       nei_r, nei_c = r + dr, c + dc
       if nei_r < 0 or nei_c < 0 or nei_r == ROWS or nei_c == COLS or (nei_r, nei_c) in visited or rooms[nei_r][nei_c] == -1:
         continue
