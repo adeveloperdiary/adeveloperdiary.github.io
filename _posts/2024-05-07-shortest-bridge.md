@@ -77,12 +77,90 @@ Here are the detailed steps:
 
 Now all is left to write the `dfs()` and `bfs()` function.
 
+```python
+def dfs(r, c):
+  if r < 0 or c < 0 or r == ROWS or c == COLS or (r,c) in visited or grid[r][c]==0:
+    return
+  
+  visited.add((r,c))
+  
+  for dr, dr in directions:
+    dfs(r+dr,c+dc)
+```
+
+Here is the `bfs()` function. This is same code as [Walls and Gates](https://adeveloperdiary.com/algorithm/graph/walls-and-gates/).
+
+```python
+def bfs()
+  distance = 0
+  
+  queue=collections.queue(visited)
+	
+  while queue:
+    for _ in range(len(queue)):
+      r, c = queue.popleft()
+      
+      for nei_r, nei_c in direction:
+        nei_r, nei_c= nei_r+r, nei_c+c
+				
+        if r < 0 or c < 0 or r == ROWS or c == COLS or (r,c) in visited:
+          continue
+
+        if grid[nei_r][nei_c]==1:
+          return distance
+        
+        visited.add((nei_r,nei_c))
+        queue.append([nei_r,nei_c])
+      
+    distance+=1 
+```
+
 ## Final Code
 
 Here is the full code.
 
 ```python
+def shortest_bridge(grid):
+    ROWS, COLS = len(grid), len(grid[0])
+    visited = set()
 
+    directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+
+    def dfs(r, c):
+        if r < 0 or c < 0 or r == ROWS or c == COLS or (r, c) in visited or grid[r][c] == 0:
+            return
+
+        visited.add((r, c))
+
+        for dr, dc in directions:
+            dfs(r+dr, c+dc)
+
+    def bfs():
+        queue = collections.deque(visited)
+        distance = 0
+
+        while queue:
+            for _ in range(len(queue)):
+                r, c = queue.popleft()
+
+                for dr, dc in directions:
+                    nei_r, nei_c = dr+r, dc+c
+                    if nei_r < 0 or nei_c < 0 or nei_r == ROWS or nei_c == COLS or (nei_r, nei_c) in visited:
+                        continue
+
+                    if grid[nei_r][nei_c] == 1:
+                        return distance
+
+                    visited.add((nei_r, nei_c))
+                    queue.append([nei_r, nei_c])
+
+            distance += 1
+
+    for r in range(ROWS):
+        for c in range(COLS):
+            if grid[r][c] == 1:
+                dfs(r, c)
+                return bfs()
 ```
 
 
