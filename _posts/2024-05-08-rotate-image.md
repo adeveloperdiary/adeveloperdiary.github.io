@@ -42,7 +42,7 @@ Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 
 We have to rotate each layers at once and move inward. Refer the fig below, we need to rotate the outer later (in blue) first before rotating the inner layer (red). 
 
-![image-20240508160254631](../assets/img/image-20240508160254631.png)
+![image-20240508160254631](../assets/img/image-20240508160254631.jpg)
 
 Once thats clear, the next important part is use of 4 pointers **left**, **right**, **top** and **bottom** when trying to rotate the matrix. The exit condition is: whenever `left=>right` we know there is no inner layer to rotate too. Like in the example above, once the red matrix gets rotated, `left` will be `>=`  `right` as after every iteration we will be incrementing `left` and decrementing `right`.
 
@@ -67,7 +67,7 @@ For the `rotate()` function, let's visualize the solution first.
 - The top-right (`11`) will be assigned to  bottom-right.
 - Finally, the top-left (`5`) will be assigned to top-right.
 
-![image-20240508160254631](../assets/img/image-20240508175949535.png)
+![image-20240508160254631](../assets/img/image-20240508175949535.jpg)
 
 We need to repeat this `t` times (`t` is one less than the number of row/col in the layer we are rotating) and every time we need to move the pointers. Let's create a loop which can do this automatically. We can find `t` using `left` and `right` as `t = right -left`.
 
