@@ -56,6 +56,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
     - :green_heart: [Swim in Rising Water](graph/swim-in-rising-water/)
     - :green_heart: [Walls and Gates](graph/walls-and-gates/)
     - :green_heart: [Rotting Oranges](graph/rotting-oranges/)
+    - :green_heart: [Shortest Bridge](graph/shortest-bridge/)
   - :green_heart: [Clone Graph](graph/clone-graph/)
   - :green_heart: [Graph Valid Tree](graph/graph-valid-tree/)
   - :green_heart: [Island Perimeter](graph/island-perimeter/)
@@ -64,7 +65,11 @@ While existing resources excel at teaching algorithms, few focus on techniques f
     - :green_heart: [Longest Increasing Path in a Matrix](graph/longest-increasing-path-in-a-matrix/)
   - :green_heart: [Reorder Routes to Lead to City Zero](graph/reorder-routes-to-lead-to-city-zero/)
   - :green_heart: [Surrounded Regions](graph/surrounded-regions/)
+  - :green_heart: [Count Sub Islands](graph/count-sub-islands/)
   - :yellow_heart: [Word Ladder](graph/word-ladder/)
   - :yellow_heart: [Course Schedule](graph/course-schedule/)
     - :green_heart: [Course Schedule II](graph/course-schedule-ii/)	
+- **Matrices**
+  - :green_heart: [Set Matrix Zeroes](matrices/set-matrix-zeroes/)
+
 

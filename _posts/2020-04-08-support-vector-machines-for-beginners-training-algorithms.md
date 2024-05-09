@@ -363,7 +363,7 @@ Let’s look that output, the **Polynomial Kernel** works fine for Donut dataset
 
 **RBF** is a much robust kernel, hence works flawlessly on both the datasets.
 
-<img src="../assets/img/Support-Vector-Machine-for-Beginners-Training-Algorithms-adeveloperdiary.com-3.webp" alt="Support-Vector-Machine-for-Beginners-Training-Algorithms-adeveloperdiary.com-3.webp" style="zoom:67%;" />
+<img src="../assets/img/Support-Vector-Machine-for-Beginners-Training-Algorithms-adeveloperdiary.com-3.jpg" alt="Support-Vector-Machine-for-Beginners-Training-Algorithms-adeveloperdiary.com-3.jpg"/>
 
 In case you are wondering how this works on the **iris dataset** we used in our first example here is the output. The Linear SVM still works with **Polynomial Kernel** and `degree = 1`
 

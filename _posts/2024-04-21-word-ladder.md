@@ -51,7 +51,7 @@ Explanation: The endWord "cog" is not in wordList, therefore there is no valid t
 
 Here is the entire code and related diagram. Let's understand each part now.
 
-![image-20240421124957771](../assets/img/image-20240421124957771.png)
+![image-20240421124957771](../assets/img/image-20240421124957771.jpg)
 
 First step is to create the **Adjacency List**. We can find all the words which are one word different than current word and create an **Adjacency List** using those words. So `hit` can have 3 words which are one letter different that `hit`, there are  `_it, h_t, hi_`.  The idea is to use these patterns to find which words from the dictionary can be reached.
 
@@ -97,7 +97,7 @@ Here is how the `adjacency_list` looks for the **Example 1** given above.
 
 Here is the visualization of the graph. Notice all we have to do is now to traverse the graph to find path to `end_word` (cog) starting from `begin_word` (hit). 
 
-<img src="../assets/img/image-20240421171412867.png" alt="image-20240421171412867" style="zoom:50%;" />
+<img src="../assets/img/image-20240421171412867.jpg" alt="image-20240421171412867"/>
 
 We will start with the `visited` `set()` and initialize the queue for our BFS.
 
