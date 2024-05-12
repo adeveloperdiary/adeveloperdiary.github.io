@@ -1,6 +1,6 @@
 ---
 title: Backtracking - Target Sum
-categories: [algorithm, matrices]
+categories: [algorithm, backtracking]
 tags: [datastructure]
 hidden: true
 ---

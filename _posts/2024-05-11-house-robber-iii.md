@@ -1,6 +1,6 @@
 ---
 title: Backtracking - House Robber III
-categories: [algorithm, matrices]
+categories: [algorithm, backtracking]
 tags: [datastructure]
 hidden: true
 ---

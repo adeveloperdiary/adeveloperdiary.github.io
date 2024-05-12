@@ -71,5 +71,18 @@ While existing resources excel at teaching algorithms, few focus on techniques f
     - :green_heart: [Course Schedule II](graph/course-schedule-ii/)	
 - **Matrices**
   - :green_heart: [Set Matrix Zeroes](matrices/set-matrix-zeroes/)
+  - :green_heart: [Rotate Image](matrices/rotate-image/)
+  - :green_heart: [Spiral Matrix](matrices/spiral-matrix/)
+- **Others**
+  - :green_heart: [First Missing Positive](others/first-missing-positive/)
+
+- **Backtracking**
+  - :green_heart: [N-Queens](backtracking/n-queens/)
+  - :green_heart: [Target Sum](backtracking/target_sum/)
+  - :green_heart: [House Robber III](backtracking/house-robber-iii/)
+  - :green_heart: [Word Search](backtracking/word-search/)
+    - :green_heart: [Word Search II](backtracking/word-search-ii/)
+
+  - :green_heart: [Restore IP Addresses](backtracking/restore-ip-addresses/)
 
 

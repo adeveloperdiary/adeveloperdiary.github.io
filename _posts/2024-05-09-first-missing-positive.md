@@ -1,6 +1,6 @@
 ---
 title: Others - First Missing Positive
-categories: [algorithm, matrices]
+categories: [algorithm, others]
 tags: [datastructure]
 hidden: true
 ---

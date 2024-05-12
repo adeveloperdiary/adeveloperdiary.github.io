@@ -1,6 +1,6 @@
 ---
 title: Backtracking - Word Search II
-categories: [algorithm, matrices]
+categories: [algorithm, backtracking]
 tags: [datastructure]
 hidden: true
 ---

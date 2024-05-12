@@ -1,5 +1,5 @@
 ---
-title: Tree - Rotate Image
+title: Matrices - Rotate Image
 categories: [algorithm, matrices]
 tags: [datastructure]
 hidden: true
