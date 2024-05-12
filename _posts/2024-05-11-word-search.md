@@ -108,6 +108,10 @@ return found
 
 If no solution found, return `False`.
 
+Visualize the code below.
+
+![word_search](../assets/img/word_search.jpg)
+
 ## Final Code
 
 Here is the full code.
