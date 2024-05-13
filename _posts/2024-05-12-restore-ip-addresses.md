@@ -110,7 +110,7 @@ Now is there a terminating condition. You will soon find that if `num_dot>4` but
 
 From every `index` position we should open `3` paths forward and explore all possible combinations for all possible valid ip. Here is the example of how that might look for the above example.
 
-![image-20240512141023356](../assets/img/image-20240512141023356.png)
+![image-20240512141023356](../assets/img/image-20240512141023356.jpg)
 
 So in every `dfs()` call we need to have a `for` loop to call `dfs()` `3` more times. There just only one edge condition, what if there are less then `3` numbers available at the end of the string. So we need to always make sure we to consider the chars we have **up to** `3`. 
 
