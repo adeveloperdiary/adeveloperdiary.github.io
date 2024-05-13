@@ -85,4 +85,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Restore IP Addresses](backtracking/restore-ip-addresses/)
   - :green_heart: [Matchsticks to Square](backtracking/matchsticks-to-square/)
   - :green_heart: [Subsets](backtracking/subsets/)
+    - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
+  - :yellow_heart: [Permutations](backtracking/permutations/)
 
