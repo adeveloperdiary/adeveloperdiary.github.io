@@ -16,7 +16,7 @@ hidden: true
 
 ## Problem
 
-Given an array `nums` of distinct integers, return *all the possible permutations*. You can return the answer in **any order**.
+Given an array `nums` of distinct integers, return all the possible permutations. You can return the answer in **any order**.
 
 **Example 1:**
 
@@ -44,6 +44,7 @@ Output: [[1]]
 Let's look at solving the problem visually first. We will use **Example 1** and will be running a recursive algorithm to solve this. Below diagram explains the high level design of it. We are going to have an `output` list which we will populate all the combinations.
 
 - We will have a `for` loop to run `len(nums)` times to generate all the combinations.
+
 ```python
 for index in range(len(nums)):
 ```
@@ -51,13 +52,13 @@ for index in range(len(nums)):
 - In the diagram below in the left all `3` Loops are depicted. In start of **loop 1**, we will remove the element `1` at index `0` from the list.
 
 ```python
-	first = nums.pop(0)
+  first = nums.pop(0)
 ```
 
 - Then take the remaining two elements (`[2,3]`) and invoke a recursive algorithm. 
 
 ```python
-	permutation_arr = recursive_function(nums)
+  permutation_arr = recursive_function(nums)
 ```
 
 - We should design the recursive algorithm so that it returns an array with two combinations `[[3,2],[2,3]]`. 
@@ -65,7 +66,7 @@ for index in range(len(nums)):
 - Now we append the removed element `1` at the end of the returned list. So the output becomes `[[3,2,1],[2,3,1]]`. Add these to the `output` array. 
 
 ```python
-	for perm in permutation_arr:
+  for perm in permutation_arr:
     perm.append(first)
 ```
 
@@ -78,7 +79,7 @@ for index in range(len(nums)):
 - :fire: Then add `1` back to the original input list. This is the trick to understand. Now the array has been shifted by `1` and in **loop 2**, `2` will be picked as the first element to be removed.
 
 ```python
-	nums.append(first)
+  nums.append(first)
 ```
 
 ![image-20240513144233239](../assets/img/image-20240513144233239.jpg)

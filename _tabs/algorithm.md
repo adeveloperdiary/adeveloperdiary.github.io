@@ -87,4 +87,5 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Subsets](backtracking/subsets/)
     - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
   - :yellow_heart: [Permutations](backtracking/permutations/)
+    - :yellow_heart: [Permutations II](backtracking/permutations-ii/)
 
