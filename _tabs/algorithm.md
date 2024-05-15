@@ -75,7 +75,6 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Spiral Matrix](matrices/spiral-matrix/)
 - **Others**
   - :green_heart: [First Missing Positive](others/first-missing-positive/)
-
 - **Backtracking**
   - :green_heart: [N-Queens](backtracking/n-queens/)
   - :green_heart: [Target Sum](backtracking/target_sum/)
@@ -86,6 +85,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Matchsticks to Square](backtracking/matchsticks-to-square/)
   - :green_heart: [Letter Combinations of a Phone Number](backtracking/letter-combinations-of-a-phone-number/)
   - :green_heart: [Generate Parentheses](backtracking/generate-parentheses/)
+  - :green_heart: [Combination Sum](backtracking/combination-sum/)
+    - :green_heart: [Combination Sum II](backtracking/combination-sum-ii/)
   - :green_heart: [Subsets](backtracking/subsets/)
     - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
   - :yellow_heart: [Permutations](backtracking/permutations/)
