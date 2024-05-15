@@ -84,6 +84,8 @@ While existing resources excel at teaching algorithms, few focus on techniques f
     - :green_heart: [Word Search II](backtracking/word-search-ii/)
   - :green_heart: [Restore IP Addresses](backtracking/restore-ip-addresses/)
   - :green_heart: [Matchsticks to Square](backtracking/matchsticks-to-square/)
+  - :green_heart: [Letter Combinations of a Phone Number](backtracking/letter-combinations-of-a-phone-number/)
+  - :green_heart: [Generate Parentheses](backtracking/generate-parentheses/)
   - :green_heart: [Subsets](backtracking/subsets/)
     - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
   - :yellow_heart: [Permutations](backtracking/permutations/)
