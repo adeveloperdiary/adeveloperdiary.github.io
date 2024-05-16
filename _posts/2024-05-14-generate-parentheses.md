@@ -48,7 +48,7 @@ Here is the high level idea:
 
 Now let's go through the **Example 1**, At first the Yellow box will run `3` times (Yellow Box) and add `(((` into the `stack`. :fire: the backtracking (`pop()`) won't be executed here. Then on the 4th run, the yellow part won't be executed as number of open will be equal to `N`. Now the green box will run `3` times and will produce `((()))`.
 
-![image-20240514174158024](../assets/img/image-20240514174158024.JPG)
+![image-20240514174158024](../assets/img/image-20240514174158024.jpg)
 
 Now the length of the generated sequence will have both `open==close==N`. So we will add it to the `output` and return.
 
