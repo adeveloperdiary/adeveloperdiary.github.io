@@ -87,6 +87,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Generate Parentheses](backtracking/generate-parentheses/)
   - :green_heart: [Combination Sum](backtracking/combination-sum/)
     - :green_heart: [Combination Sum II](backtracking/combination-sum-ii/)
+    - :green_heart: [Partition to K Equal Sum Subsets](backtracking/partition-to-k-equal-sum-subsets/)
   - :green_heart: [Subsets](backtracking/subsets/)
     - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
   - :yellow_heart: [Permutations](backtracking/permutations/)
