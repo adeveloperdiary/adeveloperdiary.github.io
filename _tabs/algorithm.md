@@ -95,4 +95,10 @@ While existing resources excel at teaching algorithms, few focus on techniques f
     - :yellow_heart: [Subsets II](backtracking/subsets-ii/)
   - :yellow_heart: [Permutations](backtracking/permutations/)
     - :yellow_heart: [Permutations II](backtracking/permutations-ii/)
+- **Greedy Techniques**
+  - :green_heart: [Jump Game](greedy/jump-game/)
+  - :green_heart: [Jump Game II](greedy/jump-game-ii/)
+  - :green_heart: [Two City Scheduling](greedy/boats-to-save-people/)
+  - :green_heart: [Gas Stations](greedy/gas-stations/)
+  - :green_heart: [Boats to Save People](greedy/two-city-scheduling/)
 
