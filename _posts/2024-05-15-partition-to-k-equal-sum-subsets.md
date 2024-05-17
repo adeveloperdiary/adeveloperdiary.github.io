@@ -1,5 +1,5 @@
 ---
-title: Backtracking - Partition to K Equal Sum Subsets
+title: Backtracking - Combinations
 categories: [algorithm, backtracking]
 tags: [datastructure]
 hidden: true
@@ -16,21 +16,25 @@ hidden: true
 
 ## Problem
 
-Given an integer array `nums` and an integer `k`, return `true` if it is possible to divide this array into `k` non-empty subsets whose sums are all equal.
+Given two integers `n` and `k`, return *all possible combinations of* `k` *numbers chosen from the range* `[1, n]`.
+
+You may return the answer in **any order**. 
 
 **Example 1:**
 
 ```
-Input: nums = [4,3,2,3,5,2,1], k = 4
-Output: true
-Explanation: It is possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
+Input: n = 4, k = 2
+Output: [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+Explanation: There are 4 choose 2 = 6 total combinations.
+Note that combinations are unordered, i.e., [1,2] and [2,1] are considered to be the same combination.
 ```
 
 **Example 2:**
 
 ```
-Input: nums = [1,2,3,4], k = 3
-Output: false
+Input: n = 1, k = 1
+Output: [[1]]
+Explanation: There is 1 choose 1 = 1 total combination.
 ```
 
 ## Solution
@@ -101,8 +105,6 @@ for j in range(index, len(nums)):
 ```
 
 Finally, just invoke & return `dfs()` .
-
-There are 
 
 ## Final Code
 
