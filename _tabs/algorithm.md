@@ -16,6 +16,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
 
 - **Two Pointers**
   - :green_heart: [Sort Colors](two-pointers/sort-colors/)
+  - :green_heart: [Longest Palindromic Substring](two-pointers/longest-palindromic-substring/)
 - **Binary Search**
   - :green_heart: [Valid Perfect Square](two-pointers/valid-perfect-square/)
   - :green_heart: [Search in Rotated Sorted Array](two-pointers/search-in-rotated-sorted-array/)
@@ -101,4 +102,9 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Two City Scheduling](greedy/boats-to-save-people/)
   - :green_heart: [Gas Stations](greedy/gas-stations/)
   - :green_heart: [Boats to Save People](greedy/two-city-scheduling/)
+- **Dynamic Programming**
+  - :green_heart: [Climbing Stairs](dp/climbing-stairs/)
+  - :green_heart: [Min Cost Climbing Stairs](dp/min-cost-climbing-stairs/)
+  - :green_heart: [House Robber I & II](dp/house-robber-i-ii/)
+
 
