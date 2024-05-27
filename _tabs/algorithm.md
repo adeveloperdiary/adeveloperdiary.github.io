@@ -76,6 +76,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Spiral Matrix](matrices/spiral-matrix/)
 - **Others**
   - :green_heart: [First Missing Positive](others/first-missing-positive/)
+  - :green_heart: [Maximum Product Subarray](others/maximum-product-subarray/)
 - **Backtracking**
   - :green_heart: [N-Queens](backtracking/n-queens/)
   - :green_heart: [Target Sum](backtracking/target_sum/)
@@ -106,5 +107,7 @@ While existing resources excel at teaching algorithms, few focus on techniques f
   - :green_heart: [Climbing Stairs](dp/climbing-stairs/)
   - :green_heart: [Min Cost Climbing Stairs](dp/min-cost-climbing-stairs/)
   - :green_heart: [House Robber I & II](dp/house-robber-i-ii/)
-
-
+  - :green_heart: [Coin Change](dp/coin-change/)
+  - :green_heart: [Word Break](dp/word-break/)
+  - :green_heart: [Longest Increasing Subsequence](dp/longest-increasing-subsequence/)
+  - :green_heart: [Partition Equal Subset Sum](dp/partition-equal-subset-sum/)

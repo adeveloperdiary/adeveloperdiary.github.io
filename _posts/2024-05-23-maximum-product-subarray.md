@@ -1,6 +1,6 @@
 ---
-title: Dynamic Programming - Maximum Product Subarray
-categories: [algorithm, dp]
+title: Others - Maximum Product Subarray
+categories: [algorithm, others]
 tags: [datastructure]
 hidden: true
 math: true

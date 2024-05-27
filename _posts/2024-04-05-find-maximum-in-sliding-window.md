@@ -54,7 +54,7 @@ Output: [1]
 2.	Before inserting the current value in the queue, **remove** all the values which are **smaller than the current value**. The older values are not required as the current larger value.
 2.	Store the **index** in the **queue**. **Remove** the **leftmost** element if **index** of that **goes out of bound**.
 
-![image-20240405134122647](../assets/img/image-20240405134122647.png)
+![image-20240405134122647](../assets/img/image-20240405134122647.jpg)
 
 ## Code
 
