@@ -74,20 +74,20 @@ def dfs(i, can_buy):
 Now if we are eligible to buy then we can either buy or cool down. Call `dfs()` by incrementing the `index` and setting `can_buy` to `False`. We also need to **subtract** the **price** from returned profit.
 
 ```python
-	if can_buy:
-  	profit_if_buying_now = dfs(i+1, False) - prices[i]
+  if can_buy:
+    profit_if_buying_now = dfs(i+1, False) - prices[i]
 ```
 
 We also need to traverse the path to cool down instead of buying.
 
 ```python
-		profit_if_cooldown =dfs(i+1, True)
+    profit_if_cooldown =dfs(i+1, True)
 ```
 
 Now return the max of both.
 
 ```python
-		return max(profit_if_buying_now,profit_if_cooldown)
+    return max(profit_if_buying_now,profit_if_cooldown)
 ```
 
 Alternatively, if we can sell then sell and skip the next element as we need to cool down after selling. Also add the price to profit.
