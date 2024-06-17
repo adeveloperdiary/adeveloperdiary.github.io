@@ -353,8 +353,8 @@ if event.type == pygame.MOUSEBUTTONDOWN:
   if self.start_button.checkForInput(self.MOUSE_POS):
     if self.options["new_friends"] == True:
       self.current_state[0]=GAME_START
-      else:
-        self.current_state[0]=GAME
+    else:
+      self.current_state[0]=GAME
 ```
 
 Upon selecting a character, I am saving the data to the json file and not passing this as a parameter as this approach can be used for any other game. 
@@ -400,7 +400,7 @@ Then I am loading all the cards (based on what expansion being selected in the o
 
 ```python 
 for card in self.cards:
-	self.playing_cards.add(PlayingCards(card,image_path="assets/cards_final",back_img_name="back",pos=(116, 202)))
+  self.playing_cards.add(PlayingCards(card,image_path="assets/cards_final",back_img_name="back",pos=(116, 202)))
 ```
 
 One major feature here is the drag and drop. I have used `MOUSEBUTTONUP`, `MOUSEMOTION` and `MOUSEBUTTONDOWN` for this. On `MOUSEBUTTONUP` I am looking for collision between the mouse pos and all the cards then selecting the card. 
@@ -412,12 +412,12 @@ def event_game_window(self):
       if event.button == 1:
         self.event_game_window_mouse_up()
 
-        if event.type == pygame.MOUSEMOTION:
-          self.event_game_window_mouse_motion(event)
+    if event.type == pygame.MOUSEMOTION:
+      self.event_game_window_mouse_motion(event)
 
-          if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-              self.event_game_window_mouse_down(event)
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if event.button == 1:
+        self.event_game_window_mouse_down(event)
 ```
 
 On `MOUSEMOTION` I am moving the selected card based on the mouse position. All the cards are in a `SpriteGroup` here. Then on `MOUSEBUTTONDOWN`, I am simply resetting the currently active card so that it does not get move with the mouse position.
